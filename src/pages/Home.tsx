@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import bg from '../assets/hero1.jpg';
+import bg from '../assets/hero.png';
 import { 
   TrendingUp, 
   Megaphone, 
@@ -65,7 +65,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl lg:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto"
             >
-              From digital to traditional marketing, we help brands grow, connect, and succeed.
+              We serve infinite business solution
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

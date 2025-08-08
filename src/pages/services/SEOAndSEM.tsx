@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import bg from '../../assets/hero1.jpg';
+import bg from '../../assets/seo-banner.jpg';
 import { Search, TrendingUp, Target, BarChart3, MapPin, FileText, ArrowRight, CheckCircle } from 'lucide-react';
 
 const SEOAndSEM = () => {
