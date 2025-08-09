@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Play, Sparkles } from "lucide-react";
+import { ArrowRight, Play, Sparkles, Zap } from "lucide-react";
 // import { Button } from '@/components/ui/button';
 import heroBg from "../assets/infinity-hero-bg.jpeg";
 import { Link } from "react-router-dom";
@@ -84,37 +84,31 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main Headline with Better Contrast */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl lg:text-7xl font-bold mb-6 leading-tight"
+          {/* Main Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-6"
             >
-            <span className="text-white block mb-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
-              Transform Your
-            </span>
-            <span className="hero-text-gradient block mb-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]">
-              Digital Presence
-            </span>
-            <span className="text-white block text-4xl lg:text-5xl drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
-              Into Infinite Success
-            </span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl lg:text-2xl mb-10 text-white max-w-4xl mx-auto font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
-            >
-            We create data-driven marketing strategies that deliver measurable
-            results, combining creativity with cutting-edge technology to fuel
-            your business growth.
-          </motion.p>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <span className="text-foreground">Transform Your</span>
+                <br />
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                  Digital Presence
+                </span>
+                <br />
+                <span className="text-foreground">Into Infinite Success</span>
+              </h1>
+              
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                We create data-driven marketing strategies that deliver measurable results, combining 
+                creativity with cutting-edge technology to fuel your business growth.
+              </p>
+            </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -137,7 +131,37 @@ const HeroSection = () => {
               >
               <span>Explore Services</span>
             </Link>
-          </motion.div>
+          </motion.div> */}
+
+          {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+            >
+              <Link to='/contact'>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="cta-button flex items-center space-x-2 px-8 py-4"
+              >
+                <span>Get a Free Quote</span>
+                <ArrowRight size={18} />
+              </motion.button>
+              </Link>
+              
+              <Link to='/services'>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="nav-item flex items-center space-x-2 px-8 py-4 text-foreground"
+              >
+                <Zap size={18} />
+                <span>Explore Services</span>
+              </motion.button>
+            </Link>
+            </motion.div>
 
         </div>
       </div>

@@ -194,7 +194,7 @@
 
 // export default Header;
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -202,6 +202,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const navigation = [
@@ -232,156 +233,183 @@ const Header = () => {
     { name: 'Contact', href: '/contact' },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
+  }, [location.pathname]);
+
   return (
     <motion.header 
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed w-full top-0 z-50 glass-header"
+      className="fixed w-full top-0 z-[100] p-3 sm:p-4 lg:p-6"
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <motion.div 
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="w-12 h-12 glass-logo rounded-2xl flex items-center justify-center relative overflow-hidden"
-            >
-              <Sparkles size={24} className="text-white relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-br from-infinity-cyan/20 to-infinity-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold bg-gradient-to-r from-infinity-blue to-infinity-purple bg-clip-text text-transparent">
-                YNB Nexus
-              </span>
-              <span className="text-xs text-muted-foreground -mt-1">Infinite Solutions</span>
-            </div>
-          </Link>
+      <motion.div
+        className={`header-container max-w-7xl mx-auto transition-all duration-500 ${
+          scrolled ? 'bg-opacity-95 shadow-2xl scale-[0.98]' : 'bg-opacity-80'
+        }`}
+        initial={{ scale: 1 }}
+      >
+        <nav className="px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-3 group z-10">
+              <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="glass-logo w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden"
+              >
+                <Sparkles size={24} className="text-white relative z-10" />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                />
+              </motion.div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-foreground">
+                  YNB Nexus
+                </span>
+                <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">
+                  Infinite Solutions
+                </span>
+              </div>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-2">
-            {navigation.map((item) => (
-              <div key={item.name} className="relative">
-                {item.submenu ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
-                  >
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-2">
+              {navigation.map((item) => (
+                <div key={item.name} className="relative">
+                  {item.submenu ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                    >
+                      <Link
+                        to={item.href}
+                        className={`nav-item flex items-center space-x-1 ${
+                          location.pathname.startsWith('/services') ? 'active' : ''
+                        }`}
+                      >
+                        <span className="text-foreground">{item.name}</span>
+                        <motion.div
+                          animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ChevronDown size={16} className="text-muted-foreground" />
+                        </motion.div>
+                      </Link>
+                      <AnimatePresence>
+                        {isServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                            transition={{ 
+                              type: "spring", 
+                              stiffness: 500, 
+                              damping: 30,
+                              duration: 0.2 
+                            }}
+                            className="absolute top-full left-0 mt-2 w-80 glass-dropdown rounded-2xl py-4"
+                            style={{ zIndex: 9999 }}
+                          >
+                            <div className="max-h-96 overflow-y-auto custom-scrollbar">
+                              <div className="grid grid-cols-1 gap-1 px-3">
+                                {item.submenu.map((subItem, index) => (
+                                  <motion.div
+                                    key={subItem.name}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: index * 0.03 }}
+                                  >
+                                    <Link
+                                      to={subItem.href}
+                                      className="block px-4 py-3 text-sm text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700/50 rounded-xl transition-all duration-200 group font-medium"
+                                    >
+                                      <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
+                                        {subItem.name}
+                                      </span>
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
                     <Link
                       to={item.href}
-                      className={`glass-nav-item flex items-center space-x-1 px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                        location.pathname.startsWith('/services') ? 'active' : ''
+                      className={`nav-item ${
+                        location.pathname === item.href ? 'active' : ''
                       }`}
                     >
                       <span className="text-foreground">{item.name}</span>
-                      <motion.div
-                        animate={{ rotate: isServicesOpen ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ChevronDown size={16} className="text-muted-foreground" />
-                      </motion.div>
                     </Link>
-                    <AnimatePresence>
-                      {isServicesOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                          transition={{ 
-                            type: "spring", 
-                            stiffness: 400, 
-                            damping: 25,
-                            duration: 0.2 
-                          }}
-                          className="absolute top-full left-0 mt-2 w-64 glass-dropdown rounded-2xl py-3 z-50"
-                        >
-                          <div className="grid grid-cols-1 gap-1 px-2">
-                            {item.submenu.map((subItem, index) => (
-                              <motion.div
-                                key={subItem.name}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.03 }}
-                              >
-                                <Link
-                                  to={subItem.href}
-                                  className="block px-4 py-2.5 text-sm text-foreground hover:bg-accent/50 rounded-xl transition-all duration-200 group"
-                                >
-                                  <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
-                                    {subItem.name}
-                                  </span>
-                                </Link>
-                              </motion.div>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <Link
-                    to={item.href}
-                    className={`glass-nav-item px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                      location.pathname === item.href ? 'active' : ''
-                    }`}
-                  >
-                    <span className="text-foreground">{item.name}</span>
-                  </Link>
-                )}
-              </div>
-            ))}
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="ml-4"
-            >
-              <Link
-                to="/contact"
-                className="glass-cta text-white px-6 py-3 rounded-xl font-semibold text-sm relative overflow-hidden group"
+                  )}
+                </div>
+              ))}
+              
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="ml-4"
               >
-                <span className="relative z-10">Get Free Quote</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-infinity-cyan/20 to-infinity-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
-            </motion.div>
-          </div>
+                <Link to="/contact" className="cta-button">
+                  <span className="relative z-10">Get Free Quote</span>
+                </Link>
+              </motion.div>
+            </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="glass-nav-item p-3 rounded-xl transition-all"
-            >
-              <AnimatePresence mode="wait">
-                {isMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ opacity: 0, rotate: -90 }}
-                    animate={{ opacity: 1, rotate: 0 }}
-                    exit={{ opacity: 0, rotate: 90 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X size={24} className="text-foreground" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ opacity: 0, rotate: 90 }}
-                    animate={{ opacity: 1, rotate: 0 }}
-                    exit={{ opacity: 0, rotate: -90 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu size={24} className="text-foreground" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.button>
+            {/* Mobile menu button */}
+            <div className="lg:hidden">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="nav-item p-3"
+              >
+                <AnimatePresence mode="wait">
+                  {isMenuOpen ? (
+                    <motion.div
+                      key="close"
+                      initial={{ opacity: 0, rotate: -90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: 90 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <X size={24} className="text-foreground" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="menu"
+                      initial={{ opacity: 0, rotate: 90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: -90 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Menu size={24} className="text-foreground" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.button>
+            </div>
           </div>
-        </div>
+        </nav>
 
         {/* Mobile Navigation */}
         <AnimatePresence>
@@ -391,73 +419,72 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden border-t border-white/10 py-6 mt-4"
+              className="lg:hidden border-t border-border/20 mt-4 overflow-hidden"
             >
-              <div className="space-y-2">
-                {navigation.map((item, index) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Link
-                      to={item.href}
-                      className={`glass-nav-item block px-4 py-3 text-base font-medium rounded-xl transition-all ${
-                        location.pathname === item.href || 
-                        (item.submenu && location.pathname.startsWith('/services')) 
-                          ? 'active' : ''
-                      }`}
-                      onClick={() => setIsMenuOpen(false)}
+              <div className="mobile-menu-backdrop rounded-b-2xl -mx-6 px-6 pb-6 pt-4">
+                <div className="max-h-[calc(100vh-200px)] overflow-y-auto custom-scrollbar space-y-2">
+                  {navigation.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="space-y-2"
                     >
-                      <span className="text-foreground">{item.name}</span>
-                    </Link>
-                    {item.submenu && (
-                      <motion.div 
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        className="ml-4 mt-2 space-y-1"
+                      <Link
+                        to={item.href}
+                        className={`nav-item block font-medium text-base ${
+                          location.pathname === item.href || 
+                          (item.submenu && location.pathname.startsWith('/services')) 
+                            ? 'active' : ''
+                        }`}
                       >
-                        {item.submenu.map((subItem, subIndex) => (
-                          <motion.div
-                            key={subItem.name}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: (index * 0.1) + (subIndex * 0.05) }}
-                          >
-                            <Link
-                              to={subItem.href}
-                              className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/30 rounded-lg transition-all"
-                              onClick={() => setIsMenuOpen(false)}
-                            >
-                              {subItem.name}
-                            </Link>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                    )}
-                  </motion.div>
-                ))}
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: navigation.length * 0.1 }}
-                  className="pt-4"
-                >
-                  <Link
-                    to="/contact"
-                    className="glass-cta block text-white px-6 py-3 rounded-xl font-semibold text-center transition-all"
-                    onClick={() => setIsMenuOpen(false)}
+                        <span className="text-foreground">{item.name}</span>
+                      </Link>
+                      {item.submenu && (
+                        <motion.div 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="ml-4 space-y-1 max-h-60 overflow-y-auto custom-scrollbar bg-black/10 rounded-xl p-3"
+                        >
+                          <div className="grid grid-cols-1 gap-1">
+                            {item.submenu.map((subItem, subIndex) => (
+                              <motion.div
+                                key={subItem.name}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: (index * 0.1) + (subIndex * 0.03) }}
+                              >
+                                <Link
+                                  to={subItem.href}
+                                  className="block px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/20 rounded-lg transition-all font-medium"
+                                >
+                                  {subItem.name}
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </motion.div>
+                  ))}
+                  
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: navigation.length * 0.1 }}
+                    className="pt-4 mt-4 border-t border-border/20"
                   >
-                    Get Free Quote
-                  </Link>
-                </motion.div>
+                    <Link to="/contact" className="cta-button block text-center">
+                      <span className="relative z-10">Get Free Quote</span>
+                    </Link>
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </motion.div>
     </motion.header>
   );
 };
