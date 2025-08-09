@@ -123,32 +123,64 @@ const ServicesSection = () => {
           )}
 
           {/* Services Grid */}
-          <motion.div
+           <motion.div
             key={`${activeCategory}-${currentSlide}`}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {getCurrentServices().map((service, index) => (
               <motion.div
                 key={`${service.title}-${currentSlide}`}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  ease: "easeOut"
+                }}
+                className="group service-card service-float rounded-3xl p-8 cursor-pointer relative overflow-hidden"
+                whileHover={{ 
+                  scale: 1.02,
+                  rotateY: 5,
+                  rotateX: 5,
+                }}
+                style={{ transformStyle: 'preserve-3d' }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon size={32} className="text-white" />
+                {/* Card Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                
+                {/* Service Icon */}
+                <div className="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10">
+                  <service.icon size={28} className="text-white" />
                 </div>
-                <div className="mb-2">
-                  <span className="text-xs font-medium text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
-                    {service.category}
-                  </span>
+
+                {/* Category Badge */}
+                <div className="service-badge inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                  {service.category}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+
+                {/* Service Content */}
+                <h3 className="text-xl font-bold text-background mb-4 group-hover:text-primary transition-colors duration-300">
+                  {service.title}
+                </h3>
+                
+                <p className="text-muted-foreground leading-relaxed group-hover:text-background/80 transition-colors duration-300">
+                  {service.description}
+                </p>
+
+                {/* Hover Arrow */}
+                <motion.div
+                  className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                  initial={{ x: -10 }}
+                  animate={{ x: 0 }}
+                >
+                  {/* <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                    <ChevronRight size={16} className="text-primary" />
+                  </div> */}
+                </motion.div>
               </motion.div>
             ))}
           </motion.div>

@@ -419,9 +419,9 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden border-t border-border/20 mt-4 overflow-hidden"
+              className="lg:hidden border-t border-border/20 mt-4 overflow-hidden rounded-b-2xl"
             >
-              <div className="mobile-menu-backdrop rounded-b-2xl -mx-6 px-6 pb-6 pt-4">
+              <div className="mobile-menu-backdrop rounded-b-2xl  -mx-6 px-6 pb-6 pt-4">
                 <div className="max-h-[calc(100vh-200px)] overflow-y-auto custom-scrollbar space-y-2">
                   {navigation.map((item, index) => (
                     <motion.div
@@ -473,9 +473,9 @@ const Header = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: navigation.length * 0.1 }}
-                    className="pt-4 mt-4 border-t border-border/20"
+                    className="pt-4 mt-4 border-t border-border/20 "
                   >
-                    <Link to="/contact" className="cta-button block text-center">
+                    <Link to="/contact" className="cta-button block text-center w-[50%] m-auto">
                       <span className="relative z-10">Get Free Quote</span>
                     </Link>
                   </motion.div>

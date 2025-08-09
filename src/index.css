@@ -18,6 +18,7 @@ All colors MUST be HSL.
 
     --popover: 220 30% 12%;
     --popover-foreground: 210 40% 98%;
+    
 
     /* Brand colors - Cosmic blue to purple gradient */
     --primary: 217 91% 60%;
@@ -242,6 +243,78 @@ All colors MUST be HSL.
       0 0 100px hsl(var(--infinity-purple) / 0.3);
   }
 
+  
+
+  /* Services Section Glass Cards */
+  .service-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: var(--transition-smooth);
+  }
+
+  .service-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(66, 165, 245, 0.3);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(66, 165, 245, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px);
+  }
+
+  .service-icon {
+    background: var(--gradient-primary);
+    box-shadow: 
+      0 8px 25px rgba(66, 165, 245, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition-bounce);
+  }
+
+  .service-card:hover .service-icon {
+    box-shadow: 
+      0 12px 35px rgba(66, 165, 245, 0.4),
+      0 0 40px rgba(139, 69, 219, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(5deg);
+  }
+
+    /* Category Filter Pills */
+  .category-pill {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition-smooth);
+  }
+
+  .category-pill:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .category-pill.active {
+    background: var(--gradient-primary);
+    border-color: rgba(66, 165, 245, 0.4);
+    box-shadow: 
+      0 8px 25px rgba(66, 165, 245, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  /* Service Category Badge */
+  .service-badge {
+    background: rgba(66, 165, 245, 0.15);
+    border: 1px solid rgba(66, 165, 245, 0.3);
+    color: rgba(66, 165, 245, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
   /* CTA Button */
   .cta-button {
     @apply relative overflow-hidden rounded-xl px-6 py-3 font-semibold text-sm text-white;
@@ -250,6 +323,11 @@ All colors MUST be HSL.
       0 4px 15px hsl(var(--infinity-blue) / 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: var(--transition-smooth);
+
+     position: relative; /* ensure correct positioning for ::after */
+  overflow: hidden;
+  will-change: transform; /* hint browser to isolate animations */
+  clip-path: inset(0);
   }
 
   .cta-button:hover {
@@ -276,7 +354,7 @@ All colors MUST be HSL.
 
   /* Dropdown */
   .glass-dropdown {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
