@@ -16,6 +16,7 @@ import {
   Award,
   Target
 } from 'lucide-react';
+import ServicesSection from '../components/ServicesSection';
 
 const Home = () => {
   const services = [
@@ -44,7 +45,7 @@ const Home = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} className=" relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
+      <section style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} className=" relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
@@ -112,8 +113,9 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      
+      {/* Old Services Section */}
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -147,7 +149,11 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* New Services Section */}
+      
+      <ServicesSection/>
 
       {/* Why Choose Us Section */}
       <section className="py-20">
@@ -241,3 +247,4 @@ const Home = () => {
 };
 
 export default Home;
+
