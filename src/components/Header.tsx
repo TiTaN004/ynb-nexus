@@ -308,7 +308,7 @@ const Header = () => {
                           animate={{ rotate: isServicesOpen ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <ChevronDown size={16} className="text-muted-foreground" />
+                          <ChevronDown size={16} className="text-primary-foreground" />
                         </motion.div>
                       </Link>
                       <AnimatePresence>
@@ -433,7 +433,7 @@ const Header = () => {
                     >
                       <Link
                         to={item.href}
-                        className={`nav-item block font-medium text-base ${
+                        className={`nav-item block font-medium text-base w-[80%] m-auto mb-1 ${
                           location.pathname === item.href || 
                           (item.submenu && location.pathname.startsWith('/services')) 
                             ? 'active' : ''
@@ -446,6 +446,7 @@ const Header = () => {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           className="ml-4 space-y-1 max-h-60 overflow-y-auto custom-scrollbar bg-black/10 rounded-xl p-3"
+                          style={{ width: '75%', margin: '0 auto' }}
                         >
                           <div className="grid grid-cols-1 gap-1">
                             {item.submenu.map((subItem, subIndex) => (
@@ -457,7 +458,7 @@ const Header = () => {
                               >
                                 <Link
                                   to={subItem.href}
-                                  className="block px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/20 rounded-lg transition-all font-medium"
+                                  className="w-[80%] block px-3 py-2.5 text-sm text-primary-foreground font-light hover:text-foreground hover:bg-accent/20 rounded-lg transition-all "
                                 >
                                   {subItem.name}
                                 </Link>

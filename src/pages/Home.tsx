@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import ServicesSection from '../components/ServicesSection';
 import HeroSection from '../components/HeroSection';
+import StatisticsSection from '../components/StatisticeSection';
+import PortfolioComponent from '../components/PortfolioComponent';
 
 const Home = () => {
   const services = [
@@ -51,6 +53,9 @@ const Home = () => {
       {/* New Services Section */}
       <ServicesSection/>
 
+      {/* statistics section */}
+      <StatisticsSection />
+
       {/* Why Choose Us Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,8 +82,8 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <feature.icon size={36} className="text-gray-900" />
+                <div className="w-20 h-20 service-icon rounded-full flex items-center justify-center mx-auto mb-6">
+                  <feature.icon size={36} className="text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -87,6 +92,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Portfolio Section */}
+      <PortfolioComponent/>
 
       {/* Featured Testimonial */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">

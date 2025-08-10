@@ -21,7 +21,7 @@ All colors MUST be HSL.
     
 
     /* Brand colors - Cosmic blue to purple gradient */
-    --primary: 217 91% 60%;
+    /* --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 220 25% 15%;
@@ -31,7 +31,42 @@ All colors MUST be HSL.
     --muted-foreground: 215 20% 65%;
 
     --accent: 220 25% 18%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 210 40% 98%; */
+
+    --primary: 240 73% 57%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 240 60% 70%;
+
+    --secondary: 240 20% 96%;
+    --secondary-foreground: 240 20% 20%;
+
+    --muted: 240 10% 96%;
+    --muted-foreground: 240 5% 45%;
+
+    --accent: 240 15% 92%;
+    --accent-foreground: 240 20% 20%;
+
+    /* Portfolio specific colors */
+    --portfolio-surface: 0 0% 100%;
+    --portfolio-surface-hover: 240 25% 98%;
+    --portfolio-tag: 240 60% 95%;
+    --portfolio-tag-foreground: 240 73% 57%;
+    --portfolio-metric: 240 20% 96%;
+    --portfolio-metric-foreground: 240 73% 57%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(240 73% 57%), hsl(240 60% 70%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(240 25% 98%));
+    --gradient-overlay: linear-gradient(180deg, transparent, hsl(0 0% 0% / 0.6));
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(240 10% 3% / 0.1), 0 2px 4px -2px hsl(240 10% 3% / 0.1);
+    --shadow-card-hover: 0 10px 15px -3px hsl(240 10% 3% / 0.1), 0 4px 6px -4px hsl(240 10% 3% / 0.1);
+    --shadow-primary: 0 4px 14px 0 hsl(240 73% 57% / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
@@ -49,7 +84,7 @@ All colors MUST be HSL.
     --infinity-indigo: 239 84% 67%;
 
     /* Glass morphism */
-    --glass-bg: 255 255 255 / 0.08;
+    --glass-bg: 255 255 255 / 0.8;
     --glass-border: 255 255 255 / 0.12;
     --glass-hover: 255 255 255 / 0.15;
     --glass-active: 217 91% 60% / 0.2;
@@ -354,7 +389,7 @@ All colors MUST be HSL.
 
   /* Dropdown */
   .glass-dropdown {
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -367,10 +402,10 @@ All colors MUST be HSL.
 
   /* Mobile menu backdrop */
   .mobile-menu-backdrop {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
+    /* background: rgba(0, 0, 0, 0); */
+    /* backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); */
   }
 
   /* Animations */

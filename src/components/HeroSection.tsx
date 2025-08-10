@@ -14,7 +14,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-12">
       {/* Enhanced Dark Overlay for Better Text Contrast */}
       <div className="absolute inset-0 bg-black/60 z-10" />
 
@@ -101,7 +101,7 @@ const HeroSection = () => {
                 <span className="text-foreground">Into Infinite Success</span>
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 We create data-driven marketing strategies that deliver measurable results, combining 
                 creativity with cutting-edge technology to fuel your business growth.
               </p>
@@ -138,7 +138,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pb-20"
             >
               <Link to='/contact'>
               <motion.button
