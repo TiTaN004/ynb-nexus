@@ -43,7 +43,6 @@ const HeroSection = () => {
           .toString(16)
           .padStart(6, "0");
           const color = `#${hax}`;
-          console.log(color);
           return (
             <motion.div
             key={i}
@@ -91,8 +90,8 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-lg text-center">
-              {/* <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"> */}
+              {/* <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-lg text-center"> */}
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="text-foreground">Transform Your</span>
                 <br />
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">

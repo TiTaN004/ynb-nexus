@@ -4,6 +4,7 @@ import { ArrowRight, Clock, Users, Target } from "lucide-react";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
+import { Link } from "react-router-dom";
 
 interface CaseStudy {
   image: string;
@@ -99,10 +100,10 @@ const PortfolioComponent = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 ">
             Our Success Stories
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover how we've helped businesses transform their digital
             presence and achieve remarkable results through strategic design and
             development.
@@ -169,7 +170,7 @@ const PortfolioComponent = () => {
 
                     {/* Title and Client */}
                     <div className="mb-6">
-                      <h3 className="text-3xl font-bold text-slate-900 mb-3">
+                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
                         {study.title}
                       </h3>
                       <div className="flex items-center gap-2 text-primary font-medium">
@@ -207,7 +208,7 @@ const PortfolioComponent = () => {
                           className={`text-center p-4 bg-portfolio-metric rounded-xl hover:bg-primary/5 transition-colors duration-smooth 
         ${resultIndex === 2 ? "col-span-2" : ""} sm:col-span-1`}
                         >
-                          <div className="sm:text-2xl md:text-3xl font-bold text-portfolio-metric-foreground mb-2">
+                          <div className="text-2xl font-bold text-portfolio-metric-foreground mb-2">
                             {result.metric}
                           </div>
                           <div
@@ -240,14 +241,16 @@ const PortfolioComponent = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <button
-            // variant="outline"
-            // size="lg"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border hover:text-accent-foreground h-11 rounded-md px-8 bg-background/80 backdrop-blur-sm hover:bg-portfolio-surface-hover border-primary/20 hover:border-primary/40 transition-all duration-smooth"
-          >
-            View All Projects
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </button>
+          <Link to="/portfolio">
+            <button
+              // variant="outline"
+              // size="lg"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border hover:text-accent-foreground h-11 rounded-md px-8 bg-background/80 backdrop-blur-sm hover:bg-portfolio-surface-hover border-primary/20 hover:border-primary/40 transition-all duration-smooth"
+            >
+              View All Projects
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>

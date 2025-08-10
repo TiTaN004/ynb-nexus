@@ -13,6 +13,7 @@ import {
   Star,
   ArrowRight
 } from 'lucide-react';
+import CtaSection from '../components/CtaSection';
 
 const Services = () => {
   const services = [
@@ -82,9 +83,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -208,27 +209,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-blue-100 mb-10">
-              Let's discuss which services are right for your business and create a custom strategy.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:from-yellow-300 hover:to-yellow-200 transition-all duration-300 transform hover:scale-105"
-            >
-              Get Free Consultation
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <CtaSection />
     </div>
   );
 };

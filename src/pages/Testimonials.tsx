@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
+import CtaSection from '../components/CtaSection';
 
 const Testimonials = () => {
   const testimonials = [
@@ -62,9 +63,9 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -207,27 +208,7 @@ const Testimonials = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Join Our Success Stories?</h2>
-            <p className="text-xl text-gray-600 mb-10">
-              Experience the YNB Nexus difference and see why our clients love working with us.
-            </p>
-            <a
-              href="/contact"
-              className="inline-block bg-gradient-to-r from-blue-900 to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-800 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-            >
-              Start Your Success Story
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <CtaSection />
     </div>
   );
 };

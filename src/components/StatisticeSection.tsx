@@ -69,12 +69,12 @@ const StatisticsSection = () => {
         <motion.div
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             <span className="text-primary-foreground bg-clip-text">
               Our Impact in Numbers
             </span>
           </h2>
-          <p className="text-xl text-blue-100/80 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-blue-100/80 max-w-3xl mx-auto">
             Delivering measurable results that drive business growth and customer satisfaction
           </p>
         </motion.div>

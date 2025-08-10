@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
+import CtaSection from '../components/CtaSection';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -49,9 +50,9 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -133,35 +134,7 @@ const FAQ = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-6">Still Have Questions?</h2>
-            <p className="text-xl text-blue-100 mb-10">
-              Don't see your question answered? We're here to help! Reach out to us directly.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:from-yellow-300 hover:to-yellow-200 transition-all duration-300 transform hover:scale-105"
-              >
-                Contact Us
-              </a>
-              <a
-                href="mailto:contact@ynbnexus.com"
-                className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
-              >
-                Email Us
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CtaSection />
     </div>
   );
 };

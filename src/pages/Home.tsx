@@ -1,50 +1,97 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import bg from '../assets/hero.png';
-import { 
-  TrendingUp, 
-  Megaphone, 
-  Search, 
-  Hash, 
-  Paintbrush, 
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  TrendingUp,
+  Megaphone,
+  Search,
+  Hash,
+  Paintbrush,
   Video,
   ArrowRight,
   CheckCircle,
   Star,
   Users,
   Award,
-  Target
-} from 'lucide-react';
-import ServicesSection from '../components/ServicesSection';
-import HeroSection from '../components/HeroSection';
-import StatisticsSection from '../components/StatisticeSection';
-import PortfolioComponent from '../components/PortfolioComponent';
-import Testimonials from './Testimonials';
-import TestimonialsCarousel from '../components/TestimonialsCarousel';
+  Target,
+  Building2,
+  Stethoscope,
+  GraduationCap,
+  ShoppingCart,
+  Briefcase,
+  Car,
+  Utensils,
+} from "lucide-react";
+import ServicesSection from "../components/ServicesSection";
+import HeroSection from "../components/HeroSection";
+import StatisticsSection from "../components/StatisticeSection";
+import PortfolioComponent from "../components/PortfolioComponent";
+import TestimonialsCarousel from "../components/TestimonialsCarousel";
+import IndustriesSection from "../components/IndustriesSection";
+import CtaSection from "../components/CtaSection";
 
 const Home = () => {
   const services = [
-    { icon: TrendingUp, title: 'Digital Marketing', description: 'Data-driven campaigns that boost ROI' },
-    { icon: Hash, title: 'Social Media Marketing', description: 'Engage audiences across all platforms' },
-    { icon: Paintbrush, title: 'Branding & Design', description: 'Create memorable brand identities' },
-    { icon: Search, title: 'SEO & Paid Ads', description: 'Get found by your ideal customers' },
-    { icon: Megaphone, title: 'Traditional Marketing', description: 'Offline solutions that work' },
-    { icon: Video, title: 'Video & Content Production', description: 'High-quality content that converts' },
+    {
+      icon: TrendingUp,
+      title: "Digital Marketing",
+      description: "Data-driven campaigns that boost ROI",
+    },
+    {
+      icon: Hash,
+      title: "Social Media Marketing",
+      description: "Engage audiences across all platforms",
+    },
+    {
+      icon: Paintbrush,
+      title: "Branding & Design",
+      description: "Create memorable brand identities",
+    },
+    {
+      icon: Search,
+      title: "SEO & Paid Ads",
+      description: "Get found by your ideal customers",
+    },
+    {
+      icon: Megaphone,
+      title: "Traditional Marketing",
+      description: "Offline solutions that work",
+    },
+    {
+      icon: Video,
+      title: "Video & Content Production",
+      description: "High-quality content that converts",
+    },
   ];
 
   const features = [
-    { icon: Target, title: '360° Marketing Solutions', description: 'Complete marketing ecosystem' },
-    { icon: Users, title: 'Expert Team', description: 'Marketers & creatives who deliver' },
-    { icon: TrendingUp, title: 'Data-Driven Strategies', description: 'Results backed by analytics' },
-    { icon: Award, title: 'Proven Track Record', description: 'Consistent success stories' },
+    {
+      icon: Target,
+      title: "360° Marketing Solutions",
+      description: "Complete marketing ecosystem",
+    },
+    {
+      icon: Users,
+      title: "Expert Team",
+      description: "Marketers & creatives who deliver",
+    },
+    {
+      icon: TrendingUp,
+      title: "Data-Driven Strategies",
+      description: "Results backed by analytics",
+    },
+    {
+      icon: Award,
+      title: "Proven Track Record",
+      description: "Consistent success stories",
+    },
   ];
 
   const stats = [
-    { number: '250+', label: 'Happy Clients' },
-    { number: '500+', label: 'Projects Completed' },
-    { number: '98%', label: 'Client Satisfaction' },
-    { number: '5+', label: 'Years Experience' },
+    { number: "250+", label: "Happy Clients" },
+    { number: "500+", label: "Projects Completed" },
+    { number: "98%", label: "Client Satisfaction" },
+    { number: "5+", label: "Years Experience" },
   ];
 
   return (
@@ -53,7 +100,10 @@ const Home = () => {
       <HeroSection />
 
       {/* New Services Section */}
-      <ServicesSection/>
+      <ServicesSection />
+
+      {/* Industries Section */}
+      <IndustriesSection />
 
       {/* statistics section */}
       <StatisticsSection />
@@ -68,9 +118,12 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're not just another marketing agency. We're your strategic partners in growth.
+            <h2 className=" text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Us?
+            </h2>
+            <p className="text-ld md:text-xl text-gray-600 max-w-3xl mx-auto">
+              We're not just another marketing agency. We're your strategic
+              partners in growth.
             </p>
           </motion.div>
 
@@ -87,7 +140,9 @@ const Home = () => {
                 <div className="w-20 h-20 service-icon rounded-full flex items-center justify-center mx-auto mb-6">
                   <feature.icon size={36} className="text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600">{feature.description}</p>
               </motion.div>
             ))}
@@ -96,10 +151,23 @@ const Home = () => {
       </section>
 
       {/* Portfolio Section */}
-      <PortfolioComponent/>
+      <PortfolioComponent />
+            
+      <TestimonialsCarousel />
 
-      {/* Featured Testimonial */}
-      {/* <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      {/* Hero Section */}
+      <CtaSection />
+    </div>
+  );
+};
+
+export default Home;
+
+{
+  /* Featured Testimonial */
+}
+{
+  /* <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -121,38 +189,5 @@ const Home = () => {
             </cite>
           </motion.div>
         </div>
-      </section> */}
-
-      <TestimonialsCarousel/>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Ready to Grow Your Business?
-            </h2>
-            <p className="text-xl text-gray-600 mb-10">
-              Let's discuss how we can help you achieve your marketing goals.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-900 to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-800 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-            >
-              <span>Start Your Journey</span>
-              <ArrowRight size={20} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default Home;
-
+      </section> */
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
+import CtaSection from '../components/CtaSection';
 
 const Portfolio = () => {
   const caseStudies = [
@@ -74,9 +75,9 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -223,28 +224,7 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-6">Ready to Be Our Next Success Story?</h2>
-            <p className="text-xl text-blue-100 mb-10">
-              Let's discuss how we can help you achieve similar results for your business.
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:from-yellow-300 hover:to-yellow-200 transition-all duration-300 transform hover:scale-105"
-            >
-              <span>Start Your Project</span>
-              <ArrowRight size={20} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <CtaSection />
     </div>
   );
 };

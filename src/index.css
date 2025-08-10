@@ -21,18 +21,6 @@ All colors MUST be HSL.
     
 
     /* Brand colors - Cosmic blue to purple gradient */
-    /* --primary: 217 91% 60%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 220 25% 15%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 220 25% 12%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 220 25% 18%;
-    --accent-foreground: 210 40% 98%; */
-
     --primary: 240 73% 57%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 240 60% 70%;
@@ -96,6 +84,15 @@ All colors MUST be HSL.
 
     --gradient-hero: linear-gradient(135deg, hsl(230 45% 15%) 0%, hsl(217 91% 60%) 50%, hsl(262 83% 58%) 100%);
 
+    /* Footer specific tokens */
+    --footer-background: rgba(0, 0, 0, 0.9);
+    --footer-surface: rgba(255, 255, 255, 0.05);
+    --footer-surface-hover: rgba(255, 255, 255, 0.1);
+    --footer-text: hsl(210 40% 98%);
+    --footer-text-muted: hsl(210 20% 70%);
+    --footer-accent: hsl(var(--infinity-blue));
+    --footer-border: rgba(255, 255, 255, 0.1);
+
     /* Shadows */
     --shadow-glow: 0 0 40px hsl(var(--infinity-blue) / 0.3);
     --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.12);
@@ -152,8 +149,6 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    
   }
 }
 
@@ -278,8 +273,6 @@ All colors MUST be HSL.
       0 0 100px hsl(var(--infinity-purple) / 0.3);
   }
 
-  
-
   /* Services Section Glass Cards */
   .service-card {
     background: rgba(255, 255, 255, 0.08);
@@ -318,7 +311,7 @@ All colors MUST be HSL.
     transform: scale(1.1) rotate(5deg);
   }
 
-    /* Category Filter Pills */
+  /* Category Filter Pills */
   .category-pill {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(15px) saturate(150%);
@@ -350,6 +343,42 @@ All colors MUST be HSL.
     -webkit-backdrop-filter: blur(10px);
   }
 
+  /* Industries Section */
+  .industry-card {
+    @apply relative p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl text-center cursor-pointer;
+    transition: var(--transition-smooth);
+  }
+
+  .industry-card:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .industry-icon-wrapper {
+    @apply w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-2 sm:mb-3 md:mb-4 rounded-lg sm:rounded-xl flex items-center justify-center;
+    background: var(--gradient-primary);
+    box-shadow: 
+      0 8px 25px rgba(66, 165, 245, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition-bounce);
+  }
+
+  .industry-card:hover .industry-icon-wrapper {
+    box-shadow: 
+      0 12px 35px rgba(66, 165, 245, 0.4),
+      0 0 40px rgba(139, 69, 219, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .industry-title {
+    @apply text-xs sm:text-sm md:text-sm font-semibold text-gray-900;
+    transition: var(--transition-smooth);
+  }
+
+  .industry-card:hover .industry-title {
+    color: rgba(66, 165, 245, 1);
+  }
+
   /* CTA Button */
   .cta-button {
     @apply relative overflow-hidden rounded-xl px-6 py-3 font-semibold text-sm text-white;
@@ -358,11 +387,10 @@ All colors MUST be HSL.
       0 4px 15px hsl(var(--infinity-blue) / 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: var(--transition-smooth);
-
-     position: relative; /* ensure correct positioning for ::after */
-  overflow: hidden;
-  will-change: transform; /* hint browser to isolate animations */
-  clip-path: inset(0);
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    clip-path: inset(0);
   }
 
   .cta-button:hover {
@@ -406,6 +434,178 @@ All colors MUST be HSL.
     /* backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-top: 1px solid rgba(255, 255, 255, 0.1); */
+  }
+
+  /* Footer Styles */
+  .footer-container {
+    background: var(--footer-background);
+    backdrop-filter: blur(25px) saturate(150%);
+    -webkit-backdrop-filter: blur(25px) saturate(150%);
+    border-top: 1px solid var(--footer-border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(var(--infinity-blue)) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--infinity-purple)) 0%, transparent 60%);
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  .footer-section {
+    @apply space-y-4;
+  }
+
+  .footer-brand {
+    @apply flex items-center space-x-3;
+  }
+
+  .footer-logo {
+    @apply w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden;
+    background: var(--gradient-primary);
+    box-shadow: 
+      0 8px 25px hsl(var(--infinity-blue) / 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition-bounce);
+  }
+
+  .footer-logo:hover {
+    box-shadow: 
+      0 12px 35px hsl(var(--infinity-blue) / 0.5),
+      0 0 40px hsl(var(--infinity-purple) / 0.3);
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .footer-title {
+    color: var(--footer-text);
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: var(--transition-smooth);
+  }
+
+  .footer-heading {
+    color: var(--footer-text);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 2rem;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
+  }
+
+  .footer-text {
+    color: var(--footer-text-muted);
+    line-height: 1.6;
+    transition: var(--transition-smooth);
+  }
+
+  .footer-link {
+    @apply block py-2 rounded-lg transition-all duration-300;
+    color: var(--footer-text-muted);
+    position: relative;
+    padding: 0.5rem 0.75rem;
+    margin: 0 -0.75rem;
+  }
+
+  .footer-link:hover {
+    color: var(--footer-accent);
+    background: var(--footer-surface);
+    transform: translateX(0.5rem);
+  }
+
+  .footer-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+  }
+
+  .footer-link:hover::before {
+    width: 0.25rem;
+  }
+
+  .footer-contact-item {
+    @apply flex items-center space-x-3 p-3 rounded-xl transition-all duration-300;
+    background: var(--footer-surface);
+    border: 1px solid transparent;
+  }
+
+  .footer-contact-item:hover {
+    background: var(--footer-surface-hover);
+    border-color: var(--footer-border);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .footer-contact-icon {
+    @apply w-5 h-5;
+    color: var(--footer-accent);
+  }
+
+  .footer-contact-text {
+    color: var(--footer-text-muted);
+    transition: var(--transition-smooth);
+  }
+
+  .footer-contact-item:hover .footer-contact-text {
+    color: var(--footer-text);
+  }
+
+  .footer-social-link {
+    @apply w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300;
+    background: var(--footer-surface);
+    border: 1px solid var(--footer-border);
+    color: var(--footer-text-muted);
+  }
+
+  .footer-social-link:hover {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 
+      0 8px 25px hsl(var(--infinity-blue) / 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .footer-bottom {
+    @apply border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center;
+    border-color: var(--footer-border);
+  }
+
+  .footer-bottom-text {
+    color: var(--footer-text-muted);
+    font-size: 0.875rem;
+  }
+
+  .footer-bottom-link {
+    @apply text-sm transition-colors duration-300;
+    color: var(--footer-text-muted);
+  }
+
+  .footer-bottom-link:hover {
+    color: var(--footer-accent);
   }
 
   /* Animations */
@@ -488,4 +688,51 @@ All colors MUST be HSL.
       border-radius: 0 0 1.5rem 1.5rem;
     }
   }
+
+  /* testimonials */
+
+  .carousel-container {
+    display: flex;
+    width: calc(320px * 12); /* 6 original + 6 duplicated cards × 320px width */
+    animation: infiniteSlide 40s linear infinite;
+  }
+
+  .carousel-container:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes infiniteSlide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-320px * 6)); /* Move exactly the width of original 6 cards */
+    }
+  }
+
+  /* Individual testimonial card */
+  .testimonial-card {
+    width: 320px;
+    flex-shrink: 0;
+    margin: 0 16px; /* mx-4 = 16px on each side */
+  }
+
+  /* Smooth fade edges */
+  .carousel-wrapper {
+    mask: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    -webkit-mask: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+  }
+
 }

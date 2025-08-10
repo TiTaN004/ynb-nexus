@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Megaphone, FileText, Radio, MapPin, Users, Calendar, ArrowRight, CheckCircle } from 'lucide-react';
+import CtaSection from '../../components/CtaSection';
 
 const TraditionalMarketing = () => {
   const services = [
@@ -60,9 +61,9 @@ const TraditionalMarketing = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -301,36 +302,7 @@ const TraditionalMarketing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Go Beyond Digital?</h2>
-            <p className="text-xl text-gray-600 mb-10">
-              Let's create a traditional marketing strategy that complements your digital efforts and maximizes your brand impact.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-900 to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-800 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-              >
-                <span>Plan Traditional Campaign</span>
-                <ArrowRight size={20} />
-              </Link>
-              <Link
-                to="/portfolio"
-                className="inline-block border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:border-blue-900 hover:text-blue-900 transition-all duration-300"
-              >
-                View Campaign Results
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CtaSection />
     </div>
   );
 };
