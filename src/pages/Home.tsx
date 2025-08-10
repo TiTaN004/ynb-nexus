@@ -20,6 +20,8 @@ import ServicesSection from '../components/ServicesSection';
 import HeroSection from '../components/HeroSection';
 import StatisticsSection from '../components/StatisticeSection';
 import PortfolioComponent from '../components/PortfolioComponent';
+import Testimonials from './Testimonials';
+import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
 const Home = () => {
   const services = [
@@ -97,7 +99,7 @@ const Home = () => {
       <PortfolioComponent/>
 
       {/* Featured Testimonial */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      {/* <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -119,7 +121,9 @@ const Home = () => {
             </cite>
           </motion.div>
         </div>
-      </section>
+      </section> */}
+
+      <TestimonialsCarousel/>
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">
