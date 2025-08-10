@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Sparkles, Zap } from "lucide-react";
 // import { Button } from '@/components/ui/button';
-import heroBg from "../assets/infinity-hero-bg.jpeg";
+import heroBg from "../../assets/infinity-hero-bg.jpeg";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {

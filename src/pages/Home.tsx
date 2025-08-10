@@ -22,12 +22,12 @@ import {
   Car,
   Utensils,
 } from "lucide-react";
-import ServicesSection from "../components/ServicesSection";
-import HeroSection from "../components/HeroSection";
-import StatisticsSection from "../components/StatisticeSection";
-import PortfolioComponent from "../components/PortfolioComponent";
-import TestimonialsCarousel from "../components/TestimonialsCarousel";
-import IndustriesSection from "../components/IndustriesSection";
+import ServicesSection from "../components/HomeComponents/ServicesSection";
+import HeroSection from "../components/HomeComponents/HeroSection";
+import StatisticsSection from "../components/HomeComponents/StatisticeSection";
+import PortfolioComponent from "../components/HomeComponents/PortfolioComponent";
+import TestimonialsCarousel from "../components/HomeComponents/TestimonialsCarousel";
+import IndustriesSection from "../components/HomeComponents/IndustriesSection";
 import CtaSection from "../components/CtaSection";
 
 const Home = () => {
