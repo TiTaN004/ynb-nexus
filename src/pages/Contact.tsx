@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
+import Hero from '../components/Common/Hero';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,21 +28,8 @@ const Contact = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Let's bring your vision to life. Contact us today.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Hero title="Contact Us" description="Let's bring your vision to life. Contact us today." />
+      
 
       {/* Contact Section */}
       <section className="py-20">
@@ -72,7 +60,7 @@ const Contact = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 service-icon rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail size={24} className="text-white" />
                   </div>
                   <div>
@@ -83,7 +71,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 service-icon rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone size={24} className="text-white" />
                   </div>
                   <div>
@@ -94,7 +82,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 service-icon rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin size={24} className="text-white" />
                   </div>
                   <div>
@@ -208,7 +196,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-900 to-blue-800 text-white px-6 py-4 rounded-lg font-semibold hover:from-blue-800 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                  className="w-full cta-button text-white px-6 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                 >
                   <Send size={20} />
                   <span>Send Message</span>

@@ -369,7 +369,7 @@ const Header = () => {
                 whileTap={{ scale: 0.95 }}
                 className="ml-4"
               >
-                <Link to="/contact" className="cta-button">
+                <Link to="/contact" className="cta-button-h">
                   <span className="relative z-10">Get Free Quote</span>
                 </Link>
               </motion.div>

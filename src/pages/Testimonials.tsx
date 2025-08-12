@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
-import CtaSection from '../components/CtaSection';
+import CtaSection from '../components/Common/CtaSection';
+import Hero from '../components/Common/Hero';
 
 const Testimonials = () => {
   const testimonials = [
@@ -65,21 +66,7 @@ const Testimonials = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Client Testimonials</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Hear what our clients have to say about working with YNB Nexus.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Hero title="Client Testimonials" description="Hear what our clients have to say about working with YNB Nexus." />
 
       {/* Stats Section */}
       <section className="py-20 bg-gray-50">

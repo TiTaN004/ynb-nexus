@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Users, Heart, TrendingUp, Coffee, MapPin, Clock, ArrowRight } from 'lucide-react';
-import CtaSection from '../components/CtaSection';
+import CtaSection from '../components/Common/CtaSection';
+import Hero from '../components/Common/Hero';
 
 const Careers = () => {
   const benefits = [
@@ -93,21 +94,7 @@ const Careers = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Join Our Team</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Work with a passionate and creative marketing team that's shaping the future of digital marketing.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Hero title="Join Our Team" description="Work with a passionate and creative marketing team that's shaping the future of digital marketing." />
 
       {/* Why Work With Us */}
       <section className="py-20">

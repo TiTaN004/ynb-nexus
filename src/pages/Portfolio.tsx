@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
-import CtaSection from '../components/CtaSection';
+import { ArrowRight, TrendingUp, Users, Award, Clock, Target } from 'lucide-react';
+import CtaSection from '../components/Common/CtaSection';
+import Hero from '../components/Common/Hero';
 
 const Portfolio = () => {
   const caseStudies = [
@@ -77,21 +78,7 @@ const Portfolio = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Our Portfolio</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Real strategies. Real results. Explore success stories from our satisfied clients.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Hero title="Our Portfolio" description="Real strategies. Real results. Explore success stories from our satisfied clients." />
 
       {/* Stats Section */}
       <section className="py-20 bg-gray-50">
@@ -119,7 +106,7 @@ const Portfolio = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-900 to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 service-icon rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon size={32} className="text-white" />
                 </div>
                 <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
@@ -150,75 +137,126 @@ const Portfolio = () => {
 
           <div className="space-y-20">
             {caseStudies.map((study, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-auto">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-portfolio-surface rounded-3xl shadow-card hover:shadow-card-hover transition-all duration-smooth overflow-hidden">
+                <div
+                  className={`grid grid-cols-1 lg:grid-cols-2 min-h-[600px] ${
+                    index % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""
+                  }`}
+                >
+                  {/* Image Section */}
+                  <div className="relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-overlay z-10"></div>
                     <img
                       src={study.image}
                       alt={study.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-smooth group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    {/* Floating Stats */}
+                    <div className="absolute bottom-6 left-6 right-6 z-20">
+                      <div className="flex justify-between items-center text-white">
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4" />
+                          <span className="text-sm font-medium">
+                            {study.timeline}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Target className="w-4 h-4" />
+                          <span className="text-sm font-medium">
+                            {study.industry}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  
-                  <div className="p-8 lg:p-12">
-                    <div className="flex flex-wrap gap-2 mb-4">
+
+                  {/* Content Section */}
+                  <div className="p-8 lg:p-12 flex flex-col justify-between">
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {study.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-sm font-medium"
+                          className="px-4 py-2 bg-portfolio-tag text-portfolio-tag-foreground rounded-full text-sm font-medium"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{study.title}</h3>
-                    <p className="text-blue-900 font-medium mb-4">{study.client} • {study.industry}</p>
-                    
-                    <div className="space-y-4 mb-6">
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">Challenge:</h4>
-                        <p className="text-gray-600">{study.challenge}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">Strategy:</h4>
-                        <p className="text-gray-600">{study.strategy}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">Timeline:</h4>
-                        <p className="text-gray-600">{study.timeline}</p>
+
+                    {/* Title and Client */}
+                    <div className="mb-6">
+                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                        {study.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-primary font-medium">
+                        <Users className="w-4 h-4" />
+                        <span>{study.client}</span>
                       </div>
                     </div>
-                    
-                    <div className="grid grid-cols-3 gap-4 mb-6">
+
+                    {/* Project Details */}
+                    <div className="space-y-6 mb-8">
+                      <div>
+                        <h4 className="font-semibold text-slate-900 mb-2 text-lg">
+                          Challenge
+                        </h4>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {study.challenge}
+                        </p>
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold text-slate-900 mb-2 text-lg">
+                          Strategy
+                        </h4>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {study.strategy}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Results Grid */}
+                    <div className="grid grid-cols-2 gap-4 mb-8 sm:grid-cols-3">
                       {study.results.map((result, resultIndex) => (
-                        <div key={resultIndex} className="text-center p-4 bg-gray-50 rounded-lg">
-                          <div className="text-2xl font-bold text-blue-900 mb-1">
+                        <div
+                          key={resultIndex}
+                          className={`text-center p-4 bg-portfolio-metric rounded-xl hover:bg-primary/5 transition-colors duration-smooth 
+                           ${
+                             resultIndex === 2 ? "col-span-2" : ""
+                           } sm:col-span-1`}
+                        >
+                          <div className="text-2xl font-bold text-portfolio-metric-foreground mb-2">
                             {result.metric}
                           </div>
-                          <div className="text-sm text-gray-600">{result.description}</div>
+                          <div
+                            style={{ overflowWrap: "anywhere" }}
+                            className="sm:text-sm md:text-sm text-muted-foreground leading-tight"
+                          >
+                            {result.description}
+                          </div>
                         </div>
                       ))}
                     </div>
-                    
-                    <button className="inline-flex items-center text-blue-900 font-semibold hover:text-blue-700 transition-colors group">
+
+                    {/* CTA button */}
+                    <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full sm:w-auto group/btn bg-gradient-primary hover:shadow-primary transition-all duration-smooth">
                       View Full Case Study
-                      <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-smooth" />
                     </button>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+          ))}
           </div>
         </div>
       </section>

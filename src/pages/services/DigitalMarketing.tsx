@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TrendingUp, Target, BarChart3, Search, MousePointer, Mail, ArrowRight, CheckCircle } from 'lucide-react';
-import CtaSection from '../../components/CtaSection';
+import CtaSection from '../../components/Common/CtaSection';
 
 const DigitalMarketing = () => {
   const services = [

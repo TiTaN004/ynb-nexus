@@ -1,5 +1,5 @@
 import React from 'react'
-import bg from "../assets/hero.png";
+import bg from "../../assets/hero.png";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -34,7 +34,7 @@ export default function CtaSection() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-900 to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-800 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center space-x-2 cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg"
             >
               <span>Start Your Journey</span>
               <ArrowRight size={20} />

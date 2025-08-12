@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
-import CtaSection from '../components/CtaSection';
+import CtaSection from '../components/Common/CtaSection';
+import Hero from '../components/Common/Hero';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -52,21 +53,8 @@ const FAQ = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Got questions? We've got answers.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Hero title="Frequently Asked Questions" description="Got questions? We've got answers." />
+      
 
       {/* FAQ Section */}
       <section className="py-20">

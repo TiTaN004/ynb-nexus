@@ -390,7 +390,7 @@ All colors MUST be HSL.
     position: relative;
     overflow: hidden;
     will-change: transform;
-    clip-path: inset(0);
+    clip-path: inset(1);
   }
 
   .cta-button:hover {
@@ -412,6 +412,42 @@ All colors MUST be HSL.
   }
 
   .cta-button:hover::after {
+    left: 100%;
+  }
+
+  /* header */
+  .cta-button-h {
+    @apply relative overflow-hidden rounded-xl px-6 py-3 font-semibold text-sm text-white;
+    background: var(--gradient-primary);
+    box-shadow: 
+      0 4px 15px hsl(var(--infinity-blue) / 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    clip-path: inset(0);
+  }
+
+  .cta-button-h:hover {
+    box-shadow: 
+      0 8px 25px hsl(var(--infinity-blue) / 0.5),
+      0 0 30px hsl(var(--infinity-purple) / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .cta-button-h::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .cta-button-h:hover::after {
     left: 100%;
   }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Scale, Shield, AlertCircle } from 'lucide-react';
-import CtaSection from '../components/CtaSection';
+import CtaSection from '../components/Common/CtaSection';
+import Hero from '../components/Common/Hero';
 
 const Terms = () => {
   const sections = [
@@ -30,24 +31,7 @@ const Terms = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Terms of Service</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Read our terms and conditions for using our services and website.
-            </p>
-            <div className="mt-8 text-sm text-blue-200">
-              Last updated: January 1, 2024
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <Hero title="Terms of Service" description="Read our terms and conditions for using our services and website." lastUpdated="January 1, 2024" />
 
       {/* Overview */}
       <section className="py-20">

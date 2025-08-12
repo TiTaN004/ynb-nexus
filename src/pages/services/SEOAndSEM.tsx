@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import bg from '../../assets/seo-banner.jpg';
 import { Search, TrendingUp, Target, BarChart3, MapPin, FileText, ArrowRight, CheckCircle } from 'lucide-react';
-import CtaSection from '../../components/CtaSection';
+import CtaSection from '../../components/Common/CtaSection';
 
 const SEOAndSEM = () => {
   const services = [

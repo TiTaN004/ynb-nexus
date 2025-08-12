@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
@@ -97,6 +98,25 @@ const TestimonialsCarousel = () => {
               </motion.div>
             ))}
           </div>
+          {/* Section Footer */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <Link to="/testimonials">
+            <button
+              // variant="outline"
+              // size="lg"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border hover:text-accent-foreground h-11 rounded-md px-8 bg-background/80 backdrop-blur-sm hover:bg-portfolio-surface-hover border-primary/20 hover:border-primary/40 transition-all duration-smooth"
+            >
+              View All Testimonials
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+          </Link>
+        </motion.div>
         </div>
       </div>
     </section>

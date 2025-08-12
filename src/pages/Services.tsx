@@ -13,7 +13,8 @@ import {
   Star,
   ArrowRight
 } from 'lucide-react';
-import CtaSection from '../components/CtaSection';
+import CtaSection from '../components/Common/CtaSection';
+import Hero from '../components/Common/Hero';
 
 const Services = () => {
   const services = [
@@ -85,21 +86,9 @@ const Services = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-              From SEO to billboards – we cover it all with comprehensive marketing solutions.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Hero title="Our Services" description="From SEO to billboards – we cover it all with comprehensive marketing solutions." />
+
+      {/* Services Section */}
 
       {/* Services Overview */}
       <section className="py-20">

@@ -28,7 +28,7 @@ import StatisticsSection from "../components/HomeComponents/StatisticeSection";
 import PortfolioComponent from "../components/HomeComponents/PortfolioComponent";
 import TestimonialsCarousel from "../components/HomeComponents/TestimonialsCarousel";
 import IndustriesSection from "../components/HomeComponents/IndustriesSection";
-import CtaSection from "../components/CtaSection";
+import CtaSection from "../components/Common/CtaSection";
 
 const Home = () => {
   const services = [

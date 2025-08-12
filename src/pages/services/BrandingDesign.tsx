@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Paintbrush, Palette, Eye, Package, FileText, ArrowRight, CheckCircle } from 'lucide-react';
-import CtaSection from '../../components/CtaSection';
+import CtaSection from '../../components/Common/CtaSection';
 
 const BrandingDesign = () => {
   const services = [

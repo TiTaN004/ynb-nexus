@@ -206,7 +206,9 @@ const PortfolioComponent = () => {
                         <div
                           key={resultIndex}
                           className={`text-center p-4 bg-portfolio-metric rounded-xl hover:bg-primary/5 transition-colors duration-smooth 
-        ${resultIndex === 2 ? "col-span-2" : ""} sm:col-span-1`}
+                           ${
+                             resultIndex === 2 ? "col-span-2" : ""
+                           } sm:col-span-1`}
                         >
                           <div className="text-2xl font-bold text-portfolio-metric-foreground mb-2">
                             {result.metric}
