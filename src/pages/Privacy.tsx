@@ -74,7 +74,7 @@ const Privacy = () => {
       </section>
 
       {/* Key Sections */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -115,10 +115,10 @@ const Privacy = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Detailed Policy */}
-      <section className="py-20">
+      <section className="">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -133,67 +133,75 @@ const Privacy = () => {
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">1. Information Collection</h3>
                 <p className="text-gray-700 mb-4">
-                  We collect information you provide directly to us, such as when you contact us for services, 
-                  subscribe to our newsletter, or fill out a form on our website. This includes:
+                  We may collect personal information that you voluntarily provide to us when you interact with our website. This may include your name, email address, phone number, and any other information you provide when filling out forms on our site.
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Contact information (name, email address, phone number)</li>
-                  <li>Business information (company name, industry, website)</li>
-                  <li>Project details and marketing goals</li>
-                  <li>Communication preferences</li>
-                </ul>
               </div>
 
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">2. Use of Information</h3>
                 <p className="text-gray-700 mb-4">
-                  We use the information we collect to provide, maintain, and improve our services, including:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Delivering marketing services and support</li>
-                  <li>Communicating with you about projects and updates</li>
-                  <li>Sending relevant marketing content (with your consent)</li>
-                  <li>Analyzing and improving our website and services</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">3. Data Security</h3>
-                <p className="text-gray-700 mb-4">
-                  We implement appropriate technical and organizational security measures to protect your 
-                  personal information against unauthorized access, alteration, disclosure, or destruction.
+                 The personal information we collect may be used to respond to your inquiries, provide you with requested services, process transactions, and improve our website's user experience. We may also use your information to send you promotional emails about our services or updates about our company, but you will always have the option to opt-out of such communications.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">4. Cookies and Tracking</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">3. Information Sharing</h3>
                 <p className="text-gray-700 mb-4">
-                  We use cookies and similar tracking technologies to enhance your experience on our website. 
-                  You can control cookie settings through your browser preferences.
+                 We do not sell, trade, or rent your personal information to third parties. However, we may share your information with trusted service providers who assist us in operating our website or conducting our business, as long as they agree to keep your information confidential.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">5. Third-Party Services</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">4. Data Security</h3>
                 <p className="text-gray-700 mb-4">
-                  We may use trusted third-party services to help us provide our services. These partners 
-                  are bound by confidentiality agreements and are prohibited from using your information 
-                  for any other purpose.
+                  We implement appropriate security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">6. Contact Us</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">5. Cookies and Tracking</h3>
                 <p className="text-gray-700 mb-4">
-                  If you have any questions about this Privacy Policy or our privacy practices, 
-                  please contact us at:
+                  Our website may use cookies to enhance your browsing experience. Cookies are small files stored on your computer's hard drive that help us analyze web traffic or recognize you when you visit our site. You can choose to accept or decline cookies through your browser settings, but this may limit some functionalities of the website.
                 </p>
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <p className="text-gray-700 mb-2"><strong>Email:</strong> privacy@ynbnexus.com</p>
-                  <p className="text-gray-700 mb-2"><strong>Phone:</strong> +1 123-456-7890</p>
-                  <p className="text-gray-700"><strong>Address:</strong> 123 Business Avenue, Suite 100, New York, NY 10001</p>
-                </div>
               </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">6. Third-Party Services</h3>
+                <p className="text-gray-700 mb-4">
+                  Our website may contain links to third-party websites that are not operated by us. We have no control over the content, privacy policies, or practices of these websites and encourage you to review their privacy policies before providing any personal information.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">7. Children's Privacy</h3>
+                <p className="text-gray-700 mb-4">
+                  Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us, and we will promptly delete such information from our records.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">8. Changes to this Policy</h3>
+                <p className="text-gray-700 mb-4">
+                  We reserve the right to update or modify this Privacy Policy at any time without prior notice. Any changes will be effective immediately upon posting on this page, and your continued use of our website after such modifications will constitute your acknowledgment of the modified policy.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">9. Area of Jurisdiction</h3>
+                <p className="text-gray-700 mb-4">
+                  This Privacy Policy and any disputes arising out of your use of our website shall be governed by the laws of Rajkot, Gujarat, India.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  If you have any questions or concerns about our Privacy Policy, please contact us at hello@ynbnexus.in.
+                </p>
+                <p className="text-gray-500 mb-4">
+                  Last updated: 16 August, 2025
+                </p>
+              </div>
+
+
+
+
+              
             </div>
           </motion.div>
         </div>

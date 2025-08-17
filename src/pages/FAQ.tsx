@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import CtaSection from '../components/Common/CtaSection';
 import Hero from '../components/Common/Hero';
+import { background } from '../assets/Background/bgExport';
+
+const { faq } = background;
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -53,7 +56,7 @@ const FAQ = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <Hero title="Frequently Asked Questions" description="Got questions? We've got answers." />
+      <Hero img={faq} title="Frequently Asked Questions" description="Got questions? We've got answers." />
       
 
       {/* FAQ Section */}

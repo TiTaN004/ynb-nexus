@@ -198,6 +198,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { serviceRoutes } from '../pages/services/servicesRoutes';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -211,24 +212,26 @@ const Header = () => {
     { 
       name: 'Services', 
       href: '/services',
-      submenu: [
-        { name: 'Digital Marketing', href: '/services/digital-marketing' },
-        { name: 'Social Media Marketing', href: '/services/social-media' },
-        { name: 'Branding & Design', href: '/services/branding-design' },
-        { name: 'Packaging Design', href: '/services/packaging-design' },
-        { name: 'Brochure Designing', href: '/services/brochure-design' },
-        { name: 'Corporate Designing', href: '/services/corporate-design' },
-        { name: 'SEO & SEM', href: '/services/seo-sem' },
-        { name: 'Website Designing', href: '/services/website-designing' },
-        { name: 'Traditional Marketing', href: '/services/traditional-marketing' },
-        { name: 'Animation & 3D', href: '/services/animation-3d' },
-        { name: 'Public Relations', href: '/services/public-relations' },
-        { name: 'Advertising', href: '/services/advertising' },
-        { name: 'Outdoor Publicity', href: '/services/outdoor-publicity' },
-        { name: 'Video Production', href: '/services/video-production' },
-        { name: 'Printing', href: '/services/printing' },
-      ]
+      submenu: serviceRoutes
     },
+    //   submenu: [
+    //     { name: 'Digital Marketing', href: '/services/digital-marketing' },
+    //     { name: 'Social Media Marketing', href: '/services/social-media' },
+    //     { name: 'Branding & Design', href: '/services/branding-design' },
+    //     { name: 'Packaging Design', href: '/services/packaging-design' },
+    //     { name: 'Brochure Designing', href: '/services/brochure-design' },
+    //     { name: 'Corporate Designing', href: '/services/corporate-design' },
+    //     { name: 'SEO & SEM', href: '/services/seo-sem' },
+    //     { name: 'Website Designing', href: '/services/website-designing' },
+    //     { name: 'Traditional Marketing', href: '/services/traditional-marketing' },
+    //     { name: 'Animation & 3D', href: '/services/animation-3d' },
+    //     { name: 'Public Relations', href: '/services/public-relations' },
+    //     { name: 'Advertising', href: '/services/advertising' },
+    //     { name: 'Outdoor Publicity', href: '/services/outdoor-publicity' },
+    //     { name: 'Video Production', href: '/services/video-production' },
+    //     { name: 'Printing', href: '/services/printing' },
+    //   ]
+    // },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -330,17 +333,17 @@ const Header = () => {
                               <div className="grid grid-cols-1 gap-1 px-3">
                                 {item.submenu.map((subItem, index) => (
                                   <motion.div
-                                    key={subItem.name}
+                                    key={subItem.title}
                                     initial={{ opacity: 0, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: index * 0.03 }}
                                   >
                                     <Link
-                                      to={subItem.href}
+                                      to={subItem.path}
                                       className="block px-4 py-3 text-sm text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700/50 rounded-xl transition-all duration-200 group font-medium"
                                     >
                                       <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
-                                        {subItem.name}
+                                        {subItem.title}
                                       </span>
                                     </Link>
                                   </motion.div>
@@ -451,16 +454,16 @@ const Header = () => {
                           <div className="grid grid-cols-1 gap-1">
                             {item.submenu.map((subItem, subIndex) => (
                               <motion.div
-                                key={subItem.name}
+                                key={subItem.title}
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: (index * 0.1) + (subIndex * 0.03) }}
                               >
                                 <Link
-                                  to={subItem.href}
+                                  to={subItem.path}
                                   className="w-[80%] block px-3 py-2.5 text-sm text-primary-foreground font-light hover:text-foreground hover:bg-accent/20 rounded-lg transition-all "
                                 >
-                                  {subItem.name}
+                                  {subItem.title}
                                 </Link>
                               </motion.div>
                             ))}

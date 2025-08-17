@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Heart, Eye, Lightbulb, Target, TrendingUp, Users } from 'lucide-react';
 import CtaSection from '../components/Common/CtaSection';
 import Hero from '../components/Common/Hero';
+import { background } from '../assets/Background/bgExport';
+
+const { about } = background
 
 const About = () => {
   const values = [
@@ -50,7 +53,7 @@ const About = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <Hero title="About YNB Nexus" description="Creative. Transparent. Results-Driven. We're the team behind your marketing success." />
+      <Hero title="About YNB Nexus" img={about} description="Creative. Transparent. Results-Driven. We're the team behind your marketing success." />
 
       {/* Mission Section */}
       <section className="py-20">
@@ -134,7 +137,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -174,7 +177,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <CtaSection />

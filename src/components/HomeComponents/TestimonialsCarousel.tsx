@@ -106,7 +106,7 @@ const TestimonialsCarousel = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <Link to="/testimonials">
+          {/* <Link to="/testimonials">
             <button
               // variant="outline"
               // size="lg"
@@ -115,7 +115,7 @@ const TestimonialsCarousel = () => {
               View All Testimonials
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
-          </Link>
+          </Link> */}
         </motion.div>
         </div>
       </div>

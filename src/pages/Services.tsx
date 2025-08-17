@@ -15,6 +15,10 @@ import {
 } from 'lucide-react';
 import CtaSection from '../components/Common/CtaSection';
 import Hero from '../components/Common/Hero';
+import { serviceRoutes } from './services/servicesRoutes';
+import { background } from '../assets/Background/bgExport';
+
+const { service } = background
 
 const Services = () => {
   const services = [
@@ -86,7 +90,7 @@ const Services = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <Hero title="Our Services" description="From SEO to billboards – we cover it all with comprehensive marketing solutions." />
+      <Hero img={service} title="Our Services" description="From SEO to billboards – we cover it all with comprehensive marketing solutions." />
 
       {/* Services Section */}
 
@@ -107,7 +111,7 @@ const Services = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {serviceRoutes.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -117,11 +121,11 @@ const Services = () => {
                 className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
               >
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 service-icon rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <service.icon size={32} className="text-white" />
                   </div>
                   <Link
-                    to={service.link}
+                    to={service.path}
                     className="text-blue-900 hover:text-blue-700 transition-colors"
                   >
                     <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
@@ -129,20 +133,20 @@ const Services = () => {
                 </div>
                 
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <p className="text-gray-600 mb-6">{service.prop.description}</p>
                 
                 <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
+                  {service.prop.services.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-700">
                       <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full mr-3"></div>
-                      {feature}
+                      {feature.title}
                     </li>
                   ))}
                 </ul>
                 
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <Link
-                    to={service.link}
+                    to={service.path}
                     className="inline-flex items-center text-blue-900 font-medium hover:text-blue-700 transition-colors group"
                   >
                     Learn More
@@ -186,7 +190,7 @@ const Services = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-900 to-blue-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 service-icon rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-white font-bold text-lg">{item.step}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>

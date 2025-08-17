@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
 import Hero from '../components/Common/Hero';
+import { background } from '../assets/Background/bgExport';
+
+const { contact } = background
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +31,7 @@ const Contact = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <Hero title="Contact Us" description="Let's bring your vision to life. Contact us today." />
+      <Hero title="Contact Us" img={contact} description="Let's bring your vision to life. Contact us today." />
       
 
       {/* Contact Section */}
@@ -110,14 +113,14 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="pt-8">
+              {/* <div className="pt-8">
                 <a
                   href="#"
                   className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:from-yellow-300 hover:to-yellow-200 transition-all duration-300 transform hover:scale-105"
                 >
                   <span>Book a Call</span>
                 </a>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Contact Form */}

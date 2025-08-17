@@ -83,8 +83,8 @@ const Footer = () => {
                 { name: 'About Us', href: '/about' },
                 { name: 'Services', href: '/services' },
                 { name: 'Portfolio', href: '/portfolio' },
-                { name: 'Testimonials', href: '/testimonials' },
-                { name: 'Careers', href: '/careers' }
+                { name: 'FAQ', href: '/faq' },
+                // { name: 'Careers', href: '/careers' }
               ].map((link, index) => (
                 <motion.div
                   key={link.name}
@@ -113,10 +113,10 @@ const Footer = () => {
             <nav className="space-y-1">
               {[
                 { name: 'Digital Marketing', href: '/services/digital-marketing' },
-                { name: 'Social Media', href: '/services/social-media' },
-                { name: 'Branding & Design', href: '/services/branding-design' },
+                { name: 'Social Media', href: 'services/social-media-marketing' },
+                { name: 'Branding & Design', href: 'services/branding-and-designing' },
                 { name: 'SEO & SEM', href: '/services/seo-sem' },
-                { name: 'Website Design', href: '/services/website-designing' }
+                { name: 'End To End Development', href: '/services/end-to-end-development' }
               ].map((service, index) => (
                 <motion.div
                   key={service.name}

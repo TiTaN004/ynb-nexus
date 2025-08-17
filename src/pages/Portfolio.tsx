@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Users, Award, Clock, Target } from 'lucide-react';
 import CtaSection from '../components/Common/CtaSection';
 import Hero from '../components/Common/Hero';
+import { background } from '../assets/Background/bgExport';
+
+const { portfolio } = background
 
 const Portfolio = () => {
   const caseStudies = [
@@ -78,7 +81,7 @@ const Portfolio = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <Hero title="Our Portfolio" description="Real strategies. Real results. Explore success stories from our satisfied clients." />
+      <Hero title="Our Portfolio" img={portfolio} description="Real strategies. Real results. Explore success stories from our satisfied clients." />
 
       {/* Stats Section */}
       <section className="py-20 bg-gray-50">
@@ -248,10 +251,10 @@ const Portfolio = () => {
                     </div>
 
                     {/* CTA button */}
-                    <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full sm:w-auto group/btn bg-gradient-primary hover:shadow-primary transition-all duration-smooth">
+                    {/* <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full sm:w-auto group/btn bg-gradient-primary hover:shadow-primary transition-all duration-smooth">
                       View Full Case Study
                       <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-smooth" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
