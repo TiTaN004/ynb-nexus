@@ -4,72 +4,102 @@ import { ArrowRight, TrendingUp, Users, Award, Clock, Target } from 'lucide-reac
 import CtaSection from '../components/Common/CtaSection';
 import Hero from '../components/Common/Hero';
 import { background } from '../assets/Background/bgExport';
+import DIL from '../assets/DIL png.png'
+import KALA from '../assets/KALA.png'
+import NGOI from '../assets/NGOI.png'
+import NST from '../assets/NST png.png'
+import balaji from '../assets/balaji.png'
+import stone from '../assets/stone.webp'
+import steel from '../assets/steel.webp'
+
 
 const { portfolio } = background
 
 const Portfolio = () => {
-  const caseStudies = [
-    {
-      title: 'Fashion Brand Transformation',
-      client: 'Fashion Forward Inc.',
-      industry: 'E-commerce Fashion',
-      challenge: 'Increase online sales and brand awareness',
-      strategy: 'Facebook & Google Ads + Influencer Campaign + Email Marketing',
-      results: [
-        { metric: '250%', description: 'Increase in sales' },
-        { metric: '180%', description: 'Growth in website traffic' },
-        { metric: '320%', description: 'Social media engagement' }
-      ],
-      timeline: '3 months',
-      image: 'https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Digital Marketing', 'Social Media', 'E-commerce']
-    },
-    {
-      title: 'Tech Startup Launch',
-      client: 'InnovateTech Solutions',
-      industry: 'Technology',
-      challenge: 'Build brand awareness from zero and generate leads',
-      strategy: 'Full branding + video production + digital launch campaign',
-      results: [
-        { metric: '10K', description: 'Social media followers' },
-        { metric: '500+', description: 'Qualified leads' },
-        { metric: '85%', description: 'Brand recognition increase' }
-      ],
-      timeline: '2 months',
-      image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Branding', 'Video Production', 'Lead Generation']
-    },
-    {
-      title: 'Restaurant Chain Expansion',
-      client: 'Gourmet Bistro Group',
-      industry: 'Food & Hospitality',
-      challenge: 'Expand to new markets and increase foot traffic',
-      strategy: 'Local SEO + Traditional advertising + Event marketing',
-      results: [
-        { metric: '400%', description: 'Increase in local searches' },
-        { metric: '150%', description: 'More reservations' },
-        { metric: '5', description: 'New locations opened' }
-      ],
-      timeline: '6 months',
-      image: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['SEO', 'Traditional Marketing', 'Event Marketing']
-    },
-    {
-      title: 'Healthcare Practice Growth',
-      client: 'WellCare Medical Center',
-      industry: 'Healthcare',
-      challenge: 'Increase patient acquisition and online reputation',
-      strategy: 'SEO optimization + Reputation management + Content marketing',
-      results: [
-        { metric: '300%', description: 'Increase in online appointments' },
-        { metric: '4.9★', description: 'Average review rating' },
-        { metric: '200%', description: 'Website organic traffic' }
-      ],
-      timeline: '4 months',
-      image: 'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['SEO', 'Reputation Management', 'Content Marketing']
-    }
-  ];
+const caseStudies = [
+  {
+    title: 'Brand Identity & Market Reach',
+    client: 'DIL Decoded Innovation LLP',
+    logo: DIL,
+    industry: 'Business Consulting & Innovation',
+    challenge: 'Build a strong digital presence to attract enterprise clients',
+    strategy: 'Complete brand revamp + LinkedIn campaigns + Thought-leadership content',
+    results: [
+      { metric: '200%', description: 'Increase in B2B inquiries' },
+      { metric: '95%', description: 'Positive engagement on LinkedIn posts' },
+      { metric: '3X', description: 'Growth in client acquisition pipeline' }
+    ],
+    timeline: '5 months',
+    image: 'https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg?auto=compress&cs=tinysrgb&w=800',
+    tags: ['Branding', 'B2B Marketing', 'Content Strategy']
+  },
+  {
+    title: 'Digital Showcase for Natural Stone',
+    client: 'KALA Stone',
+    logo: KALA,
+    industry: 'Natural Stone & Construction Materials',
+    challenge: 'Expand reach to architects and interior designers globally',
+    strategy: 'High-quality product photography + SEO optimization + Catalog website',
+    results: [
+      { metric: '150%', description: 'Increase in website traffic' },
+      { metric: '60+', description: 'New B2B partnerships with dealers and designers' },
+      { metric: '80%', description: 'More international inquiries received' }
+    ],
+    timeline: '4 months',
+    image: stone,
+    tags: ['Website Development', 'SEO', 'Product Marketing']
+  },
+  {
+    title: 'Corporate Growth & Visibility',
+    client: 'Nilkanth Group of Industries',
+    logo: NGOI,
+    industry: 'Manufacturing & Industrial',
+    challenge: 'Strengthen corporate visibility and investor confidence',
+    strategy: 'Corporate website + Investor pitch design + PR coverage',
+    results: [
+      { metric: '2X', description: 'Growth in investor interest' },
+      { metric: '500+', description: 'Leads generated from digital campaigns' },
+      { metric: '40%', description: 'Increase in brand search volume' }
+    ],
+    timeline: '6 months',
+    image: 'https://images.pexels.com/photos/236089/pexels-photo-236089.jpeg?auto=compress&cs=tinysrgb&w=800',
+    tags: ['Corporate Branding', 'PR Strategy', 'Digital Presence']
+  },
+  {
+    title: 'Digital Transformation for Tiles Business',
+    client: 'Balaji Tiles',
+    logo: balaji,
+    industry: 'Ceramics & Construction',
+    challenge: 'Compete with larger brands and grow dealer network',
+    strategy: 'Social media campaigns + Catalog design + WhatsApp marketing',
+    results: [
+      { metric: '120%', description: 'Increase in distributor engagement' },
+      { metric: '75%', description: 'Boost in dealer inquiries' },
+      { metric: '3X', description: 'Growth in product sample requests' }
+    ],
+    timeline: '3 months',
+    image: 'https://images.pexels.com/photos/6585761/pexels-photo-6585761.jpeg?auto=compress&cs=tinysrgb&w=800',
+    tags: ['Social Media', 'B2B Marketing', 'WhatsApp Campaigns']
+  },
+  {
+  title: 'Stronger Digital Presence for Steel Industry',
+  client: 'Navrang Steel',
+  logo: NST,
+  industry: 'Steel & Metal Manufacturing',
+  challenge: 'Enhance brand credibility and reach new B2B buyers online',
+  strategy: 'Corporate website redesign + SEO optimization + LinkedIn outreach',
+  results: [
+    { metric: '2.5X', description: 'Increase in qualified B2B inquiries' },
+    { metric: '70%', description: 'Improvement in search engine visibility' },
+    { metric: '150+', description: 'New dealer and distributor connections' }
+  ],
+  timeline: '5 months',
+  image: steel,
+  tags: ['Website Development', 'SEO', 'B2B Marketing']
+}
+
+];
+
 
   const stats = [
     { icon: TrendingUp, number: '500+', label: 'Projects Completed' },
@@ -109,7 +139,7 @@ const Portfolio = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-500">
                   <stat.icon size={32} className="text-gray-900" />
                 </div>
                 <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
@@ -196,13 +226,16 @@ const Portfolio = () => {
                     </div>
 
                     {/* Title and Client */}
-                    <div className="mb-6">
-                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-                        {study.title}
-                      </h3>
-                      <div className="flex items-center gap-2 text-primary font-medium">
-                        <Users className="w-4 h-4" />
-                        <span>{study.client}</span>
+                    <div className="mb-6 flex justify-evenly items-center flex-col md:flex-row">
+                      <img src={study.logo} alt="logo" className="w-[15%] min-w-[30%] md:min-w-[15%]" />
+                      <div>
+                        <h3 className="text-xl md:text-3xl font-bold text-slate-900 mb-3">
+                          {study.title}
+                        </h3>
+                        <div className="flex items-center justify-center md:justify-start gap-2 text-primary font-medium">
+                          <Users className="w-4 h-4" />
+                          <span>{study.client}</span>
+                        </div>
                       </div>
                     </div>
 

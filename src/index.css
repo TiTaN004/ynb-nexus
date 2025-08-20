@@ -453,7 +453,7 @@ All colors MUST be HSL.
 
   /* Dropdown */
   .glass-dropdown {
-    background: rgba(0, 0, 0, 0.398);
+    background: rgba(255, 255, 255);
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);

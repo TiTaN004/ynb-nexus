@@ -1,32 +1,40 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-const StatisticsSection = () => {
-  const stats = [
+interface StatisticeSectionProp {
+  stat?: { number: string, label: string, description: string }[] | null
+}
+
+const StatisticsSection = ({ stat }: StatisticeSectionProp) => {
+  const stats = stat != undefined ? stat : [
     {
       number: "100M+",
       label: "Products brought to life",
-      description: "Tikuave brings dreams to life with 50,000 daily visualizer users"
+      description:
+        "Tikuave brings dreams to life with 50,000 daily visualizer users",
     },
     {
       number: "6x",
-      label: "Increase in Conversions", 
-      description: "Purchasing flowing, walls, print, and rugs more confidently with Tikuave"
+      label: "Increase in Conversions",
+      description:
+        "Purchasing flowing, walls, print, and rugs more confidently with Tikuave",
     },
     {
       number: "50%",
-      label: "Decrease in Product Returns",
-      description: "Ensures confident and informed visualization, resulting in fewer product returns"
+      label: "Fewer Returns",
+      description:
+        "Ensures confident and informed visualization, resulting in fewer product returns",
     },
     {
       number: "3x",
       label: "3x Faster Sales Cycle",
-      description: "Accelerate your sales process with smoother and faster customer interactions"
-    }
+      description:
+        "Accelerate your sales process with smoother and faster customer interactions",
+    },
   ];
 
   return (
-    <motion.section 
+    <motion.section
       className="py-20 relative overflow-hidden"
       // initial={{ opacity: 0 }}
       // whileInView={{ opacity: 1 }}
@@ -34,105 +42,113 @@ const StatisticsSection = () => {
       // transition={{ duration: 1.2 }}
       // viewport={{ once: false, margin: "-10%" }}
       style={{
-        background: 'linear-gradient(135deg, hsl(220, 45%, 12%) 0%, hsl(217, 60%, 8%) 25%, hsl(225, 70%, 15%) 50%, hsl(217, 60%, 8%) 75%, hsl(220, 45%, 12%) 100%)'
+        background:
+          "linear-gradient(135deg, hsl(220, 45%, 12%) 0%, hsl(217, 60%, 8%) 25%, hsl(225, 70%, 15%) 50%, hsl(217, 60%, 8%) 75%, hsl(220, 45%, 12%) 100%)",
       }}
     >
       {/* Enhanced Deep Blue Background with cosmic gradients */}
       <div className="absolute inset-0">
         {/* Primary deep blue gradient */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(circle at 30% 20%, hsl(217, 91%, 25%) 0%, transparent 50%), radial-gradient(circle at 70% 80%, hsl(262, 83%, 25%) 0%, transparent 50%), radial-gradient(circle at 20% 80%, hsl(198, 93%, 20%) 0%, transparent 50%)'
+            background:
+              "radial-gradient(circle at 30% 20%, hsl(217, 91%, 25%) 0%, transparent 50%), radial-gradient(circle at 70% 80%, hsl(262, 83%, 25%) 0%, transparent 50%), radial-gradient(circle at 20% 80%, hsl(198, 93%, 20%) 0%, transparent 50%)",
           }}
         ></div>
-        
+
         {/* Overlay for depth */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%)'
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%)",
           }}
         ></div>
-        
+
         {/* Subtle noise texture */}
-        <div 
+        <div
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)`,
-            backgroundSize: '20px 20px'
+            backgroundSize: "20px 20px",
           }}
         ></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="text-center mb-16"
-        >
+        <motion.div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             <span className="text-primary-foreground bg-clip-text">
               Our Impact in Numbers
             </span>
           </h2>
           <p className="text-lg md:text-xl text-blue-100/80 max-w-3xl mx-auto">
-            Delivering measurable results that drive business growth and customer satisfaction
+            Delivering measurable results that drive business growth and
+            customer satisfaction
           </p>
         </motion.div>
 
-        <motion.div
-          className="relative"
-        >
+        <motion.div className="relative">
           {/* Enhanced glass container with deep blue theme */}
-          <div 
+          <div
             className="rounded-3xl p-8 lg:p-12 max-w-6xl mx-auto relative backdrop-blur-xl"
             style={{
-              background: 'rgba(25, 50, 120, 0.3)',
-              border: '1px solid rgba(100, 150, 255, 0.2)',
-              boxShadow: '0 25px 50px rgba(0, 20, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+              background: "rgba(25, 50, 120, 0.3)",
+              border: "1px solid rgba(100, 150, 255, 0.2)",
+              boxShadow:
+                "0 25px 50px rgba(0, 20, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
             }}
           >
             {/* Inner glow */}
-            <div 
+            <div
               className="absolute inset-0 rounded-3xl opacity-50"
               style={{
-                background: 'radial-gradient(ellipse at center, rgba(66, 165, 245, 0.1) 0%, transparent 70%)'
+                background:
+                  "radial-gradient(ellipse at center, rgba(66, 165, 245, 0.1) 0%, transparent 70%)",
               }}
             ></div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative z-10">
-              {stats.map((stat, index) => (
+              {stats?.map((stat, index) => (
                 <motion.div
                   key={index}
                   // initial={{ opacity: 0, scale: 0.8, y: -20 }}
                   // whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   // exit={{ opacity: 0, scale: 0.9, y: -10 }}
-                  // transition={{ 
-                  //   duration: 0.6, 
+                  // transition={{
+                  //   duration: 0.6,
                   //   delay: 0.6 + index * 0.1,
                   //   type: "spring",
                   //   stiffness: 100
                   // }}
                   // viewport={{ once: false, margin: "-10%" }}
-                  className="text-center group"
+                  className="text-left group"
                 >
                   <div className="mb-4 relative">
                     {/* Enhanced glow effect behind number */}
-                    <div 
+                    <div
                       className="absolute inset-0 rounded-full blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       style={{
-                        background: 'radial-gradient(circle, rgba(66, 165, 245, 0.3) 0%, rgba(139, 69, 219, 0.2) 50%, rgba(34, 197, 244, 0.1) 100%)'
+                        background:
+                          "radial-gradient(circle, rgba(66, 165, 245, 0.3) 0%, rgba(139, 69, 219, 0.2) 50%, rgba(34, 197, 244, 0.1) 100%)",
                       }}
                     ></div>
-                    
+
                     <div className="text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-infinity-blue via-infinity-cyan to-infinity-purple bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300 relative z-10">
                       {stat.number}
                     </div>
-                    <div className="text-lg lg:text-xl font-semibold text-white/90 mb-3">
+                    <div className="text-lg lg:text-xl font-semibold text-white/90 mb-3 ">
                       {stat.label}
                     </div>
-                    <div className="text-sm lg:text-base text-blue-100/70 leading-relaxed">
+                    <hr className="border-gray-400 w-[100%]" />
+                    <div className="text-sm lg:text-base text-blue-100/70 leading-relaxed pt-4">
                       {stat.description}
                     </div>
+
+
+
+
                   </div>
                 </motion.div>
               ))}
@@ -141,12 +157,13 @@ const StatisticsSection = () => {
         </motion.div>
 
         {/* Enhanced Decorative elements with blue theme */}
-        <motion.div 
+        <motion.div
           className="absolute top-1/4 left-10 w-20 h-20 rounded-full animate-pulse"
           style={{
-            background: 'linear-gradient(135deg, rgba(66, 165, 245, 0.3), rgba(34, 197, 244, 0.2))',
-            border: '1px solid rgba(66, 165, 245, 0.4)',
-            boxShadow: '0 0 30px rgba(66, 165, 245, 0.3)'
+            background:
+              "linear-gradient(135deg, rgba(66, 165, 245, 0.3), rgba(34, 197, 244, 0.2))",
+            border: "1px solid rgba(66, 165, 245, 0.4)",
+            boxShadow: "0 0 30px rgba(66, 165, 245, 0.3)",
           }}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -154,14 +171,15 @@ const StatisticsSection = () => {
           transition={{ duration: 1, delay: 0.8 }}
           viewport={{ once: false }}
         ></motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="absolute bottom-1/4 right-10 w-16 h-16 rounded-full animate-pulse"
           style={{
-            background: 'linear-gradient(135deg, rgba(139, 69, 219, 0.3), rgba(124, 58, 237, 0.2))',
-            border: '1px solid rgba(139, 69, 219, 0.4)',
-            boxShadow: '0 0 25px rgba(139, 69, 219, 0.3)',
-            animationDelay: '1s'
+            background:
+              "linear-gradient(135deg, rgba(139, 69, 219, 0.3), rgba(124, 58, 237, 0.2))",
+            border: "1px solid rgba(139, 69, 219, 0.4)",
+            boxShadow: "0 0 25px rgba(139, 69, 219, 0.3)",
+            animationDelay: "1s",
           }}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -169,14 +187,15 @@ const StatisticsSection = () => {
           transition={{ duration: 1, delay: 1 }}
           viewport={{ once: false }}
         ></motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="absolute top-1/2 left-1/4 w-12 h-12 rounded-full animate-pulse"
           style={{
-            background: 'linear-gradient(135deg, rgba(34, 197, 244, 0.3), rgba(66, 165, 245, 0.2))',
-            border: '1px solid rgba(34, 197, 244, 0.4)',
-            boxShadow: '0 0 20px rgba(34, 197, 244, 0.3)',
-            animationDelay: '0.5s'
+            background:
+              "linear-gradient(135deg, rgba(34, 197, 244, 0.3), rgba(66, 165, 245, 0.2))",
+            border: "1px solid rgba(34, 197, 244, 0.4)",
+            boxShadow: "0 0 20px rgba(34, 197, 244, 0.3)",
+            animationDelay: "0.5s",
           }}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -190,3 +209,84 @@ const StatisticsSection = () => {
 };
 
 export default StatisticsSection;
+
+// import React from 'react';
+
+// const StatisticsSection = () => {
+//   const stats = [
+//     {
+//       number: "100M+",
+//       label: "Products brought to life",
+//       description: "YNB brings dreams to life with 50,000 daily visualizer users"
+//     },
+//     {
+//       number: "6x",
+//       label: "Increase in Conversions",
+//       description: "Purchasing flowing, walls, print, and rugs more confidently with YNB"
+//     },
+//     {
+//       number: "50%",
+//       label: "Decrease in Product Returns",
+//       description: "Ensures confident and informed visualization, resulting in fewer product returns"
+//     },
+//     {
+//       number: "3x",
+//       label: "3x Faster Sales Cycle",
+//       description: "Accelerate your sales process with smoother and faster customer interactions"
+//     }
+//   ];
+
+//   return (
+//     <section className="py-20 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+//       {/* Background decorative elements */}
+//       <div className="absolute inset-0">
+//         <div className="absolute top-0 left-0 w-72 h-72 bg-orange-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+//         <div className="absolute top-0 right-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" style={{animationDelay: '2s'}}></div>
+//         <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" style={{animationDelay: '4s'}}></div>
+//       </div>
+
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+//         {/* Header */}
+//         <div className="text-center mb-16">
+//           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+//             Our Impact in Numbers
+//           </h2>
+//           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+//             Delivering measurable results that drive business growth and customer satisfaction
+//           </p>
+//         </div>
+
+//         {/* Statistics Grid - matches the reference exactly */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+//           {stats.map((stat, index) => (
+//             <div key={index} className="text-left flex justify-evenly flex-col">
+//               {/* Large orange number */}
+//               <div className="text-5xl lg:text-7xl font-bold text-orange-500 mb-4 leading-none">
+//                 {stat.number}
+//               </div>
+
+//               {/* Black label/title */}
+//               <h3 className="text-xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+//                 {stat.label}
+//               </h3>
+
+//               <hr className='border-gray-400 w-[100%]'/>
+
+//               {/* Gray description text */}
+//               <p className="text-base text-gray-500 leading-relaxed pt-4 w-[90%]">
+//                 {stat.description}
+//               </p>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Bottom decorative line */}
+//         <div className="mt-20 flex justify-center">
+//           <div className="w-32 h-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-full"></div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default StatisticsSection;

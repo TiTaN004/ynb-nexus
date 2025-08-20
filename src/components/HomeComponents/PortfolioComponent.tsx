@@ -6,6 +6,10 @@ import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import { Link } from "react-router-dom";
 
+import DIL from "../../assets/DIL png.png";
+import KALA from "../../assets/KALA.png";
+import stone from "../../assets/stone.webp";
+
 interface CaseStudy {
   image: string;
   title: string;
@@ -23,36 +27,43 @@ interface CaseStudy {
 
 const caseStudies = [
   {
-    title: "Fashion Brand Transformation",
-    client: "Fashion Forward Inc.",
-    industry: "E-commerce Fashion",
-    challenge: "Increase online sales and brand awareness",
-    strategy: "Facebook & Google Ads + Influencer Campaign + Email Marketing",
+    title: "Brand Identity & Market Reach",
+    client: "DIL Decoded Innovation LLP",
+    logo: DIL,
+    industry: "Business Consulting & Innovation",
+    challenge: "Build a strong digital presence to attract enterprise clients",
+    strategy:
+      "Complete brand revamp + LinkedIn campaigns + Thought-leadership content",
     results: [
-      { metric: "250%", description: "Increase in sales" },
-      { metric: "180%", description: "Growth in website traffic" },
-      { metric: "320%", description: "Social media engagement" },
+      { metric: "200%", description: "Increase in B2B inquiries" },
+      { metric: "95%", description: "Positive engagement on LinkedIn posts" },
+      { metric: "3X", description: "Growth in client acquisition pipeline" },
     ],
-    timeline: "3 months",
+    timeline: "5 months",
     image:
-      "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["Digital Marketing", "Social Media", "E-commerce"],
+      "https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["Branding", "B2B Marketing", "Content Strategy"],
   },
   {
-    title: "Tech Startup Launch",
-    client: "InnovateTech Solutions",
-    industry: "Technology",
-    challenge: "Build brand awareness from zero and generate leads",
-    strategy: "Full branding + video production + digital launch campaign",
+    title: "Digital Showcase for Natural Stone",
+    client: "KALA Stone",
+    logo: KALA,
+    industry: "Natural Stone & Construction Materials",
+    challenge: "Expand reach to architects and interior designers globally",
+    strategy:
+      "High-quality product photography + SEO optimization + Catalog website",
     results: [
-      { metric: "10K", description: "Social media followers" },
-      { metric: "500+", description: "Qualified leads" },
-      { metric: "85%", description: "Brand recognition increase" },
+      { metric: "150%", description: "Increase in website traffic" },
+      {
+        metric: "60+",
+        description: "New B2B partnerships with dealers and designers",
+      },
+      { metric: "80%", description: "More international inquiries received" },
     ],
-    timeline: "2 months",
+    timeline: "4 months",
     image:
-      "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["Branding", "Video Production", "Lead Generation"],
+      stone,
+    tags: ["Website Development", "SEO", "Product Marketing"],
   },
 ];
 
@@ -137,13 +148,16 @@ const PortfolioComponent = () => {
                     </div>
 
                     {/* Title and Client */}
-                    <div className="mb-6">
-                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-                        {study.title}
-                      </h3>
-                      <div className="flex items-center gap-2 text-primary font-medium">
-                        <Users className="w-4 h-4" />
-                        <span>{study.client}</span>
+                    <div className="mb-6 flex justify-evenly items-center flex-col md:flex-row">
+                      <img src={study.logo} alt="logo" className="w-[15%] min-w-[30%] md:min-w-[15%]" />
+                      <div>
+                        <h3 className="text-xl md:text-3xl font-bold text-slate-900 mb-3">
+                          {study.title}
+                        </h3>
+                        <div className="flex items-center justify-center md:justify-start gap-2 text-primary font-medium">
+                          <Users className="w-4 h-4" />
+                          <span>{study.client}</span>
+                        </div>
                       </div>
                     </div>
 

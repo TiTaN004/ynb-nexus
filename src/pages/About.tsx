@@ -4,6 +4,7 @@ import { Heart, Eye, Lightbulb, Target, TrendingUp, Users } from 'lucide-react';
 import CtaSection from '../components/Common/CtaSection';
 import Hero from '../components/Common/Hero';
 import { background } from '../assets/Background/bgExport';
+import StatisticsSection from '../components/HomeComponents/StatisticeSection';
 
 const { about } = background
 
@@ -44,10 +45,10 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '250+', label: 'Projects Completed' },
-    { number: '98%', label: 'Client Satisfaction' },
-    { number: '5+', label: 'Years Experience' },
-    { number: '50+', label: 'Team Members' },
+    { number: '250+', label: 'Projects Completed', description: 'Delivering successful campaigns tailored to client goals.' },
+    { number: '98%', label: 'Client Satisfaction', description: 'Consistently exceeding expectations with measurable results.' },
+    { number: '5+', label: 'Years Experience', description: 'Proven expertise across industries and evolving markets.' },
+    { number: '50+', label: 'Team Members', description: 'Dedicated professionals driving creativity, strategy, and growth.' },
   ];
 
   return (
@@ -73,12 +74,12 @@ const About = () => {
                 We are a full-service marketing agency offering end-to-end marketing solutions across digital, traditional, and creative platforms. With a team of experienced professionals, we craft customized marketing campaigns tailored to your brand and audience.
               </p>
               <div className="grid grid-cols-2 gap-8">
-                {stats.map((stat, index) => (
+                {/* {stats.map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-3xl font-bold text-blue-900 mb-2">{stat.number}</div>
                     <div className="text-gray-600">{stat.label}</div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </motion.div>
             <motion.div
@@ -98,6 +99,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <StatisticsSection stat={stats}/>
 
       {/* Values Section */}
       <section className="py-20 bg-gray-50">
@@ -125,8 +128,8 @@ const About = () => {
                 viewport={{ once: true }}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="w-16 h-16  rounded-lg flex items-center justify-center mb-6">
-                  <value.icon size={32} className="text-gray-900" />
+                <div className="w-16 h-16 service-icon rounded-lg flex items-center justify-center mb-6">
+                  <value.icon size={32} className="text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
