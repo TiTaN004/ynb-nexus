@@ -140,7 +140,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pb-20"
             >
-              <Link to='/contact'>
+              <Link to='/contact#form'>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

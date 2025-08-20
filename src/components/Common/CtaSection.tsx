@@ -26,15 +26,15 @@ export default function CtaSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
               Ready to Grow Your Business?
             </h2>
-            <p className="text-xl text-gray-200 mb-10">
+            <p className="text-sm md:text-xl text-gray-200 mb-10">
               Let's discuss how we can help you achieve your marketing goals.
             </p>
             <Link
-              to="/contact"
-              className="inline-flex items-center space-x-2 cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg"
+              to="/contact#form"
+              className="inline-flex items-center space-x-2 cta-button text-white px-8 py-4 rounded-lg font-semibold text-sm md:text-lg"
             >
               <span>Start Your Journey</span>
               <ArrowRight size={20} />

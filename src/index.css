@@ -355,7 +355,7 @@ All colors MUST be HSL.
 
   .industry-icon-wrapper {
     @apply w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-2 sm:mb-3 md:mb-4 rounded-lg sm:rounded-xl flex items-center justify-center;
-    background: var(--gradient-primary);
+    /* background: var(--gradient-primary); */
     box-shadow: 
       0 8px 25px rgba(66, 165, 245, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -365,7 +365,7 @@ All colors MUST be HSL.
   .industry-card:hover .industry-icon-wrapper {
     box-shadow: 
       0 12px 35px rgba(66, 165, 245, 0.4),
-      0 0 40px rgba(139, 69, 219, 0.3),
+      0 0 40px rgba(182, 157, 210, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.3);
     transform: scale(1.1) rotate(5deg);
   }
@@ -453,7 +453,7 @@ All colors MUST be HSL.
 
   /* Dropdown */
   .glass-dropdown {
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.398);
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -553,7 +553,7 @@ All colors MUST be HSL.
   }
 
   .footer-link {
-    @apply block py-2 rounded-lg transition-all duration-300;
+    @apply block py-2 rounded-sm transition-all duration-300;
     color: var(--footer-text-muted);
     position: relative;
     padding: 0.5rem 0.75rem;
@@ -579,7 +579,7 @@ All colors MUST be HSL.
   }
 
   .footer-link:hover::before {
-    width: 0.25rem;
+    /* width: 0.25rem; */
   }
 
   .footer-contact-item {

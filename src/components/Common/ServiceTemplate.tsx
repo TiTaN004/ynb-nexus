@@ -134,8 +134,8 @@ export default function ServiceTemplate({
                 viewport={{ once: true }}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
               >
-                <div className="w-16 h-16 service-icon rounded-lg flex items-center justify-center mb-6">
-                  <service.icon size={32} className="text-white" />
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                  <service.icon size={32} className="text-gray-900" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {service.title}

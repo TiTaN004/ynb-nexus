@@ -21,11 +21,14 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import ServiceTemplate from "./components/Common/ServiceTemplate";
 import { serviceRoutes } from "./pages/services/servicesRoutes.ts";
+import ScrollComponent from "./components/Common/ScrollComponent.tsx";
 
 function App() {
+  
   return (
     <Router>
       <div className="min-h-screen bg-white">
+        <ScrollComponent/>
         <Header />
         <motion.main
           initial={{ opacity: 0 }}
@@ -45,7 +48,7 @@ function App() {
             ))}
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
-            {/* <Route path="/testimonials" element={<Testimonials />} /> */}
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/faq" element={<FAQ />} />
             {/* <Route path="/careers" element={<Careers />} /> */}
             <Route path="/privacy" element={<Privacy />} />

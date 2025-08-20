@@ -3,58 +3,52 @@ import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import CtaSection from '../components/Common/CtaSection';
 import Hero from '../components/Common/Hero';
+import { background } from '../assets/Background/bgExport';
+
+const { bgTestimonials } = background
 
 const Testimonials = () => {
+
   const testimonials = [
-    {
-      quote: "They handled our entire launch campaign flawlessly. Sales tripled within 6 months! Their strategic approach and attention to detail made all the difference.",
-      author: "Sarah Johnson",
-      role: "Fashion Brand Owner",
-      company: "Fashion Forward Inc.",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400",
-      rating: 5
-    },
-    {
-      quote: "Their SEO work helped us rank #1 for key terms in our industry. The increase in organic traffic has been phenomenal. Highly recommend their services!",
-      author: "David Chen",
-      role: "E-commerce Owner",
-      company: "TechGadgets Plus",
-      image: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400",
-      rating: 5
-    },
-    {
-      quote: "Professional, creative, and strategic. YNB Nexus is a true partner for growth. They understand our business and consistently deliver outstanding results.",
-      author: "Priya Patel",
-      role: "Startup Founder",
-      company: "InnovateTech Solutions",
-      image: "https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg?auto=compress&cs=tinysrgb&w=400",
-      rating: 5
-    },
-    {
-      quote: "The branding work they did for us was exceptional. Our new brand identity perfectly captures who we are and has significantly improved our market presence.",
-      author: "Michael Rodriguez",
-      role: "Restaurant Chain Owner",
-      company: "Gourmet Bistro Group",
-      image: "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=400",
-      rating: 5
-    },
-    {
-      quote: "Working with YNB Nexus transformed our digital presence. Their social media campaigns increased our engagement by 400% and brought in countless new customers.",
-      author: "Emily Watson",
-      role: "Fitness Studio Owner",
-      company: "PowerFit Studios",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400",
-      rating: 5
-    },
-    {
-      quote: "Their traditional marketing approach combined with digital strategies gave us the perfect mix. We saw immediate results and sustained growth over months.",
-      author: "James Thompson",
-      role: "Healthcare Practice Owner",
-      company: "WellCare Medical Center",
-      image: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400",
-      rating: 5
-    }
-  ];
+  // --- Creative ---
+  {
+    name: "Aarav Mehta",
+    role: "Founder, FreshFoods",
+    image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+    content: "The branding and logo design gave our startup a professional identity. Customers now instantly recognize us — a complete game changer!",
+    rating: 5
+  },
+  {
+    name: "Sophia Patel",
+    role: "Marketing Manager, UrbanWear",
+    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+    content: "Their packaging design was both stylish and functional. Sales increased noticeably after the launch of our new line.",
+    rating: 5
+  },
+  {
+    name: "Kabir Desai",
+    role: "CEO, InspireTech",
+    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+    content: "The brochure design captured our services perfectly. Clients were impressed with how clear and attractive our presentation looked.",
+    rating: 5
+  },
+
+  // --- Traditional ---
+  {
+    name: "Rajiv Sharma",
+    role: "Director, BuildRight Constructions",
+    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+    content: "From corporate designing to high-quality printing, the team handled everything seamlessly. Truly professional service.",
+    rating: 5
+  },
+  {
+    name: "Emily Carter",
+    role: "CEO, BrightAds Agency",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+    content: "Their outdoor publicity and advertising campaigns helped us capture huge attention across the city. Incredible reach!",
+    rating: 5
+  },
+];
 
   const stats = [
     { number: '98%', label: 'Client Satisfaction Rate' },
@@ -62,11 +56,10 @@ const Testimonials = () => {
     { number: '250+', label: 'Happy Clients' },
     { number: '95%', label: 'Client Retention Rate' },
   ];
-
   return (
     <div className="">
       {/* Hero Section */}
-      <Hero title="Client Testimonials" description="Hear what our clients have to say about working with YNB Nexus." />
+      <Hero  title="Client Testimonials" img={bgTestimonials} description="Hear what our clients have to say about working with YNB Nexus." />
 
       {/* Stats Section */}
       <section className="py-20 bg-gray-50">
@@ -141,25 +134,25 @@ const Testimonials = () => {
                 </div>
                 
                 <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                  "{testimonial.quote}"
+                  "{testimonial.content}"
                 </blockquote>
                 
                 <div className="flex items-center">
                   <img
                     src={testimonial.image}
-                    alt={testimonial.author}
+                    alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover mr-4"
                   />
                   <div>
                     <cite className="font-semibold text-gray-900 not-italic">
-                      {testimonial.author}
+                      {testimonial.name}
                     </cite>
                     <div className="text-sm text-gray-600">
                       {testimonial.role}
                     </div>
-                    <div className="text-sm text-blue-900 font-medium">
+                    {/* <div className="text-sm text-blue-900 font-medium">
                       {testimonial.company}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </motion.div>
@@ -169,7 +162,7 @@ const Testimonials = () => {
       </section>
 
       {/* Featured Testimonial */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      {/* <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -192,7 +185,7 @@ const Testimonials = () => {
             </cite>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <CtaSection />

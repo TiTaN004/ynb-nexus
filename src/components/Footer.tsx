@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { href, Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -42,14 +42,15 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3 mt-6">
               {[
-                { icon: Facebook, href: "#", label: "Facebook" },
-                { icon: Instagram, href: "#", label: "Instagram" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Twitter, href: "#", label: "Twitter" }
+                // { icon: Facebook, href: "#", label: "Facebook" },
+                { icon: Instagram, href: "https://www.instagram.com/ynbnexus/?hl=en", label: "Instagram" },
+                { icon: Linkedin, href: "https://www.linkedin.com/company/ynb-nexus/?viewAsMember=true", label: "LinkedIn" },
+                { icon: Twitter, href: "https://x.com/YNBNEXUS", label: "Twitter" }
               ].map(({ icon: Icon, href, label }, index) => (
                 <motion.a
                   key={label}
                   href={href}
+                  target='_blanc'
                   className="footer-social-link"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
@@ -80,10 +81,11 @@ const Footer = () => {
             <h3 className="footer-heading">Quick Links</h3>
             <nav className="space-y-1">
               {[
-                { name: 'About Us', href: '/about' },
                 { name: 'Services', href: '/services' },
                 { name: 'Portfolio', href: '/portfolio' },
                 { name: 'FAQ', href: '/faq' },
+                { name: 'Testimonials', href: '/testimonials'},
+                { name: 'About Us', href: '/about' },
                 // { name: 'Careers', href: '/careers' }
               ].map((link, index) => (
                 <motion.div
@@ -146,17 +148,17 @@ const Footer = () => {
               {[
                 {
                   icon: Mail,
-                  text: "contact@ynbnexus.com",
-                  href: "mailto:contact@ynbnexus.com"
+                  text: "ynbnexus@gmail.com",
+                  href: "mailto:ynbnexus@gmail.com"
                 },
                 {
                   icon: Phone,
-                  text: "+1 123-456-7890",
-                  href: "tel:+11234567890"
+                  text: "+91 76986 38389",
+                  href: "tel:+917698638389"
                 },
                 {
                   icon: MapPin,
-                  text: "123 Business Ave, City, State 12345",
+                  text: "202 - Radium square, Bhakti Nagar station plot,Gondal road, Rajkot, Gujarat 360002",
                   href: "https://maps.google.com"
                 }
               ].map(({ icon: Icon, text, href }, index) => (
@@ -172,7 +174,7 @@ const Footer = () => {
                   transition={{ delay: 1.2 + index * 0.1 }}
                 >
                   <Icon className="footer-contact-icon" />
-                  <span className="footer-contact-text">{text}</span>
+                  <span className={`footer-contact-text ${text.length > 20 ? 'flex-1' : ''}`}>{text}</span>
                 </motion.a>
               ))}
             </div>

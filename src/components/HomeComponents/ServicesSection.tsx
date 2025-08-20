@@ -153,8 +153,8 @@ const ServicesSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                 
                 {/* Service Icon */}
-                <div className="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10">
-                  <service.icon size={28} className="text-white" />
+                <div className=" w-24 h-w-24 rounded-2xl flex items-center justify-left mb-6 relative z-10 ml-5">
+                  <service.icon size={28} className="text-gray-950" />
                 </div>
 
                 {/* Category Badge */}
@@ -225,12 +225,12 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Count */}
-        <div className="text-center mt-8">
+        {/* <div className="text-center mt-8">
           <p className="text-gray-500">
             Showing {getCurrentServices().length} of {filteredServices.length} services
             {activeCategory !== 'All' && ` in ${activeCategory}`}
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -54,38 +54,6 @@ const caseStudies = [
       "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800",
     tags: ["Branding", "Video Production", "Lead Generation"],
   },
-  {
-    title: "Restaurant Chain Expansion",
-    client: "Gourmet Bistro Group",
-    industry: "Food & Hospitality",
-    challenge: "Expand to new markets and increase foot traffic",
-    strategy: "Local SEO + Traditional advertising + Event marketing",
-    results: [
-      { metric: "400%", description: "Increase in local searches" },
-      { metric: "150%", description: "More reservations" },
-      { metric: "5", description: "New locations opened" },
-    ],
-    timeline: "6 months",
-    image:
-      "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["SEO", "Traditional Marketing", "Event Marketing"],
-  },
-  {
-    title: "Healthcare Practice Growth",
-    client: "WellCare Medical Center",
-    industry: "Healthcare",
-    challenge: "Increase patient acquisition and online reputation",
-    strategy: "SEO optimization + Reputation management + Content marketing",
-    results: [
-      { metric: "300%", description: "Increase in online appointments" },
-      { metric: "4.9★", description: "Average review rating" },
-      { metric: "200%", description: "Website organic traffic" },
-    ],
-    timeline: "4 months",
-    image:
-      "https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["SEO", "Reputation Management", "Content Marketing"],
-  },
 ];
 
 const PortfolioComponent = () => {

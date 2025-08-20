@@ -109,8 +109,8 @@ const Portfolio = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 service-icon rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon size={32} className="text-white" />
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon size={32} className="text-gray-900" />
                 </div>
                 <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                   {stat.number}

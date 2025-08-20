@@ -27,7 +27,7 @@ export default function Hero({ title,img, description, lastUpdated }: HeroProps)
     //     </div>
     //   </section>
       <section
-  className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-40"
+  className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 pt-[210px]"
   style={{
     backgroundImage: `url(${img})`,
     backgroundSize: "cover",

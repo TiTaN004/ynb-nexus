@@ -121,8 +121,8 @@ const Services = () => {
                 className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
               >
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-16 h-16 service-icon rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <service.icon size={32} className="text-white" />
+                  <div className="w-16 h-16  rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <service.icon size={32} className="text-gray-900" />
                   </div>
                   <Link
                     to={service.path}

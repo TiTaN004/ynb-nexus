@@ -18,6 +18,7 @@ import ImgPortfolio from './Technical Program Manager vs_ Product Manager_ Whatâ
 import ImgContact from './Marketing.jpeg'
 import ImgService from './seo1.jpeg'
 import ImgFaq from './faq.webp'
+import ImgTestimonials from './testimonials.webp'
 
 export const background = {
     digitalMarketing: ImgDigitalMarketing,
@@ -39,5 +40,6 @@ export const background = {
     portfolio: ImgPortfolio,
     contact: ImgContact,
     service: ImgService,
-    faq: ImgFaq
+    faq: ImgFaq,
+    bgTestimonials: ImgTestimonials
 }

@@ -35,7 +35,7 @@ const Contact = () => {
       
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section className="py-20" id='form'>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -63,46 +63,45 @@ const Contact = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 service-icon rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail size={24} className="text-white" />
+                  <div className="w-12 h-12  rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail size={24} className="text-gray-900" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Email Us</h4>
-                    <p className="text-gray-600">contact@ynbnexus.com</p>
+                    <p className="text-gray-600">ynbnexus@gmail.com</p>
                     <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 service-icon rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone size={24} className="text-white" />
+                  <div className="w-12 h-12  rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone size={24} className="text-gray-900" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Call Us</h4>
-                    <p className="text-gray-600">+1 123-456-7890</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
+                    <p className="text-gray-600">+91 76986 38389</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 service-icon rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin size={24} className="text-white" />
+                  <div className="w-12 h-12  rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin size={24} className="text-gray-900" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Visit Us</h4>
-                    <p className="text-gray-600">123 Business Avenue<br />Suite 100<br />New York, NY 10001</p>
+                    <p className="text-gray-600">202 - Radium square, Bhakti Nagar station plot,<br />Gondal road, Rajkot,<br /> Gujarat 360002</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-400 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MessageCircle size={24} className="text-white" />
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MessageCircle size={24} className="text-gray-900"  />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">WhatsApp</h4>
-                    <p className="text-gray-600">+1 123-456-7890</p>
+                    <p className="text-gray-600">+91 76986 38389</p>
                     <a 
-                      href="https://wa.me/1234567890" 
+                      href="https://wa.me/+917698638389" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-block mt-2 bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors"
