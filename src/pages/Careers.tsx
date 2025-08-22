@@ -94,7 +94,7 @@ const Careers = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <Hero title="Join Our Team" description="Work with a passionate and creative marketing team that's shaping the future of digital marketing." />
+      <Hero img='' title="Join Our Team" description="Work with a passionate and creative marketing team that's shaping the future of digital marketing." />
 
       {/* Why Work With Us */}
       <section className="py-20">

@@ -2,7 +2,7 @@ import React from 'react';
 import { href, Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+import logo from '../assets/NEXUS.svg'
 const Footer = () => {
   return (
     <footer className="footer-container relative z-10">
@@ -17,24 +17,9 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="footer-brand group">
-              <motion.div 
-                className="footer-logo"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <Sparkles size={24} className="text-white relative z-10" />
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                />
-              </motion.div>
-              <div className="flex flex-col">
-                <span className="footer-title">YNB Nexus</span>
-                <span className="text-xs footer-text -mt-1">
-                  Infinite Solutions
-                </span>
+              
+              <div className="flex flex-col items-center">
+               <img src={logo} alt="ynb logo" className="w-[50%] brightness-150" />
               </div>
             </div>
             <p className="footer-text mt-4">
@@ -42,7 +27,6 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3 mt-6">
               {[
-                // { icon: Facebook, href: "#", label: "Facebook" },
                 { icon: Instagram, href: "https://www.instagram.com/ynbnexus/?hl=en", label: "Instagram" },
                 { icon: Linkedin, href: "https://www.linkedin.com/company/ynb-nexus/?viewAsMember=true", label: "LinkedIn" },
                 { icon: Twitter, href: "https://x.com/YNBNEXUS", label: "Twitter" }

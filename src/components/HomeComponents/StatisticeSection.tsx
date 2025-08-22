@@ -2,45 +2,43 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface StatisticeSectionProp {
-  stat?: { number: string, label: string, description: string }[] | null
+  stat?: { number: string; label: string; description: string }[] | null;
 }
 
 const StatisticsSection = ({ stat }: StatisticeSectionProp) => {
-  const stats = stat != undefined ? stat : [
-    {
-      number: "100M+",
-      label: "Products brought to life",
-      description:
-        "Tikuave brings dreams to life with 50,000 daily visualizer users",
-    },
-    {
-      number: "6x",
-      label: "Increase in Conversions",
-      description:
-        "Purchasing flowing, walls, print, and rugs more confidently with Tikuave",
-    },
-    {
-      number: "50%",
-      label: "Fewer Returns",
-      description:
-        "Ensures confident and informed visualization, resulting in fewer product returns",
-    },
-    {
-      number: "3x",
-      label: "3x Faster Sales Cycle",
-      description:
-        "Accelerate your sales process with smoother and faster customer interactions",
-    },
-  ];
+  const stats =
+    stat != undefined
+      ? stat
+      : [
+          {
+            number: "100M+",
+            label: "Products brought to life",
+            description:
+              "Tikuave brings dreams to life with 50,000 daily visualizer users",
+          },
+          {
+            number: "6x",
+            label: "Increase in Conversions",
+            description:
+              "Purchasing flowing, walls, print, and rugs more confidently with Tikuave",
+          },
+          {
+            number: "50%",
+            label: "Fewer Returns",
+            description:
+              "Ensures confident and informed visualization, resulting in fewer product returns",
+          },
+          {
+            number: "3x",
+            label: "3x Faster Sales Cycle",
+            description:
+              "Accelerate your sales process with smoother and faster customer interactions",
+          },
+        ];
 
   return (
     <motion.section
       className="py-20 relative overflow-hidden"
-      // initial={{ opacity: 0 }}
-      // whileInView={{ opacity: 1 }}
-      // exit={{ opacity: 0 }}
-      // transition={{ duration: 1.2 }}
-      // viewport={{ once: false, margin: "-10%" }}
       style={{
         background:
           "linear-gradient(135deg, hsl(220, 45%, 12%) 0%, hsl(217, 60%, 8%) 25%, hsl(225, 70%, 15%) 50%, hsl(217, 60%, 8%) 75%, hsl(220, 45%, 12%) 100%)",
@@ -111,20 +109,7 @@ const StatisticsSection = ({ stat }: StatisticeSectionProp) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative z-10">
               {stats?.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  // initial={{ opacity: 0, scale: 0.8, y: -20 }}
-                  // whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  // exit={{ opacity: 0, scale: 0.9, y: -10 }}
-                  // transition={{
-                  //   duration: 0.6,
-                  //   delay: 0.6 + index * 0.1,
-                  //   type: "spring",
-                  //   stiffness: 100
-                  // }}
-                  // viewport={{ once: false, margin: "-10%" }}
-                  className="text-left group"
-                >
+                <motion.div key={index} className="text-left group">
                   <div className="mb-4 relative">
                     {/* Enhanced glow effect behind number */}
                     <div
@@ -145,10 +130,6 @@ const StatisticsSection = ({ stat }: StatisticeSectionProp) => {
                     <div className="text-sm lg:text-base text-blue-100/70 leading-relaxed pt-4">
                       {stat.description}
                     </div>
-
-
-
-
                   </div>
                 </motion.div>
               ))}

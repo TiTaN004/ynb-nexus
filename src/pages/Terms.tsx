@@ -3,36 +3,15 @@ import { motion } from "framer-motion";
 import { FileText, Scale, Shield, AlertCircle } from "lucide-react";
 import CtaSection from "../components/Common/CtaSection";
 import Hero from "../components/Common/Hero";
-
-const Terms = () => {
-  const sections = [
-    {
-      icon: FileText,
-      title: "Service Agreement",
-      description:
-        "Terms governing our marketing services and client relationships",
-    },
-    {
-      icon: Scale,
-      title: "Rights & Responsibilities",
-      description: "Your rights as a client and our mutual responsibilities",
-    },
-    {
-      icon: Shield,
-      title: "Limitation of Liability",
-      description: "Understanding liability limits and service guarantees",
-    },
-    {
-      icon: AlertCircle,
-      title: "Important Notices",
-      description: "Key legal notices and policy updates",
-    },
-  ];
+import { background } from "../assets/Background/bgExport";
+const { tnc } = background
+ const Terms = () => {
 
   return (
     <div className="">
       {/* Hero Section */}
       <Hero
+        img={tnc}
         title="Terms of Service"
         description="Read our terms and conditions for using our services and website."
         lastUpdated="January 1, 2024"
@@ -59,42 +38,7 @@ const Terms = () => {
         </div>
       </section>
 
-      {/* Key Sections */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Key Terms Overview</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Important aspects of our terms and conditions explained simply.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {sections.map((section, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-xl shadow-lg"
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg flex items-center justify-center mb-6">
-                  <section.icon size={32} className="text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{section.title}</h3>
-                <p className="text-gray-600">{section.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+      
 
       {/* Detailed Terms */}
       <section className="">
@@ -248,3 +192,64 @@ const Terms = () => {
 };
 
 export default Terms;
+
+  // const sections = [
+  //   {
+  //     icon: FileText,
+  //     title: "Service Agreement",
+  //     description:
+  //       "Terms governing our marketing services and client relationships",
+  //   },
+  //   {
+  //     icon: Scale,
+  //     title: "Rights & Responsibilities",
+  //     description: "Your rights as a client and our mutual responsibilities",
+  //   },
+  //   {
+  //     icon: Shield,
+  //     title: "Limitation of Liability",
+  //     description: "Understanding liability limits and service guarantees",
+  //   },
+  //   {
+  //     icon: AlertCircle,
+  //     title: "Important Notices",
+  //     description: "Key legal notices and policy updates",
+  //   },
+  // ];
+
+{/* Key Sections */}
+      {/* <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Key Terms Overview</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Important aspects of our terms and conditions explained simply.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {sections.map((section, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-xl shadow-lg"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg flex items-center justify-center mb-6">
+                  <section.icon size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{section.title}</h3>
+                <p className="text-gray-600">{section.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section> */}

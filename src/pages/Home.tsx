@@ -31,39 +31,6 @@ import IndustriesSection from "../components/HomeComponents/IndustriesSection";
 import CtaSection from "../components/Common/CtaSection";
 
 const Home = () => {
-  const services = [
-    {
-      icon: TrendingUp,
-      title: "Digital Marketing",
-      description: "Data-driven campaigns that boost ROI",
-    },
-    {
-      icon: Hash,
-      title: "Social Media Marketing",
-      description: "Engage audiences across all platforms",
-    },
-    {
-      icon: Paintbrush,
-      title: "Branding & Design",
-      description: "Create memorable brand identities",
-    },
-    {
-      icon: Search,
-      title: "SEO & Paid Ads",
-      description: "Get found by your ideal customers",
-    },
-    {
-      icon: Megaphone,
-      title: "Traditional Marketing",
-      description: "Offline solutions that work",
-    },
-    {
-      icon: Video,
-      title: "Video & Content Production",
-      description: "High-quality content that converts",
-    },
-  ];
-
   const features = [
     {
       icon: Target,
@@ -152,7 +119,7 @@ const Home = () => {
 
       {/* Portfolio Section */}
       <PortfolioComponent />
-            
+
       <TestimonialsCarousel />
 
       {/* Hero Section */}
@@ -162,6 +129,39 @@ const Home = () => {
 };
 
 export default Home;
+
+// const services = [
+//   {
+//     icon: TrendingUp,
+//     title: "Digital Marketing",
+//     description: "Data-driven campaigns that boost ROI",
+//   },
+//   {
+//     icon: Hash,
+//     title: "Social Media Marketing",
+//     description: "Engage audiences across all platforms",
+//   },
+//   {
+//     icon: Paintbrush,
+//     title: "Branding & Design",
+//     description: "Create memorable brand identities",
+//   },
+//   {
+//     icon: Search,
+//     title: "SEO & Paid Ads",
+//     description: "Get found by your ideal customers",
+//   },
+//   {
+//     icon: Megaphone,
+//     title: "Traditional Marketing",
+//     description: "Offline solutions that work",
+//   },
+//   {
+//     icon: Video,
+//     title: "Video & Content Production",
+//     description: "High-quality content that converts",
+//   },
+// ];
 
 {
   /* Featured Testimonial */

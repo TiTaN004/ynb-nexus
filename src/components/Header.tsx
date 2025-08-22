@@ -1,203 +1,9 @@
-// import React, { useState } from 'react';
-// import { Link, useLocation } from 'react-router-dom';
-// import { Menu, X, ChevronDown } from 'lucide-react';
-// import { motion, AnimatePresence } from 'framer-motion';
-
-// const Header = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [isServicesOpen, setIsServicesOpen] = useState(false);
-//   const location = useLocation();
-
-//   const navigation = [
-//     { name: 'Home', href: '/' },
-//     { name: 'About', href: '/about' },
-//     {
-//       name: 'Services',
-//       href: '/services',
-//       submenu: [
-//         { name: 'Digital Marketing', href: '/services/digital-marketing' },
-//         { name: 'Social Media Marketing', href: '/services/social-media' },
-//         { name: 'Branding & Design', href: '/services/branding-design' },
-//         { name: 'Packaging Design', href: '/services/branding-design' },
-//         { name: 'Brochure Designing', href: '/services/branding-design' },
-//         { name: 'Corporate Designing', href: '/services/branding-design' },
-//         { name: 'SEO & SEM', href: '/services/seo-sem' },
-//         { name: 'Website Designing', href: '/services/website-designing' },
-//         { name: 'Traditional Marketing', href: '/services/traditional-marketing' },
-//         { name: 'Animation & 3D', href: '/services/animation-3d' },
-//         { name: 'Public Relations', href: '/services/public-relations' },
-//         { name: 'Advertising', href: '/services/advertising' },
-//         { name: 'Outdoor Publicity', href: '/services/outdoor-publicity' },
-//         { name: 'Video Production', href: '/services/video-production' },
-//         { name: 'Printing', href: '/services/printing' },
-//       ]
-//     },
-//     { name: 'Portfolio', href: '/portfolio' },
-//     { name: 'Contact', href: '/contact' },
-//   ];
-
-//         //  Branding
-//         //  Packaging Design
-//         //  Logo Designing
-//         //  Brochure Designing
-//         //  Corporate Designing
-
-//         //  Printing
-//         //  Advertising
-//         //  Outdoor Publicity
-//         //  Digital Marketing
-//         //  Social Media Marketing
-//         //  Website Designing
-//         //  SEO
-//         //  Video Production
-//         //  Animation & 3D
-//         //  Public Relations
-
-//   return (
-//     <header className="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-//       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between items-center h-16">
-//           {/* Logo */}
-//           <Link to="/" className="flex items-center space-x-2">
-//             <div className="w-8 h-8 bg-gradient-to-r from-blue-900 to-blue-700 rounded-lg flex items-center justify-center">
-//               <span className="text-white font-bold text-sm">YN</span>
-//             </div>
-//             <span className="text-xl font-bold text-gray-900">YNB Nexus</span>
-//           </Link>
-
-//           {/* Desktop Navigation */}
-//           <div className="hidden md:flex items-center space-x-8">
-//             {navigation.map((item) => (
-//               <div key={item.name} className="relative">
-//                 {item.submenu ? (
-//                   <div
-//                     className="relative"
-//                     onMouseEnter={() => setIsServicesOpen(true)}
-//                     onMouseLeave={() => setIsServicesOpen(false)}
-//                   >
-//                     <Link
-//                       to={item.href}
-//                       className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-//                         location.pathname.startsWith('/services')
-//                           ? 'text-blue-900 bg-blue-50'
-//                           : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50'
-//                       }`}
-//                     >
-//                       <span>{item.name}</span>
-//                       <ChevronDown size={16} />
-//                     </Link>
-//                     <AnimatePresence>
-//                       {isServicesOpen && (
-//                         <motion.div
-//                           initial={{ opacity: 0, y: -10 }}
-//                           animate={{ opacity: 1, y: 0 }}
-//                           exit={{ opacity: 0, y: -10 }}
-//                           transition={{ duration: 0.2 }}
-//                           className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2"
-//                         >
-//                           {item.submenu.map((subItem) => (
-//                             <Link
-//                               key={subItem.name}
-//                               to={subItem.href}
-//                               className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-900 hover:bg-blue-50 transition-colors"
-//                             >
-//                               {subItem.name}
-//                             </Link>
-//                           ))}
-//                         </motion.div>
-//                       )}
-//                     </AnimatePresence>
-//                   </div>
-//                 ) : (
-//                   <Link
-//                     to={item.href}
-//                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-//                       location.pathname === item.href
-//                         ? 'text-blue-900 bg-blue-50'
-//                         : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50'
-//                     }`}
-//                   >
-//                     {item.name}
-//                   </Link>
-//                 )}
-//               </div>
-//             ))}
-//             <Link
-//               to="/contact"
-//               className="bg-gradient-to-r from-blue-900 to-blue-800 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-800 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-//             >
-//               Get Free Quote
-//             </Link>
-//           </div>
-
-//           {/* Mobile menu button */}
-//           <div className="md:hidden">
-//             <button
-//               onClick={() => setIsMenuOpen(!isMenuOpen)}
-//               className="p-2 rounded-md text-gray-700 hover:text-blue-900 hover:bg-blue-50 transition-colors"
-//             >
-//               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-//             </button>
-//           </div>
-//         </div>
-
-//         {/* Mobile Navigation */}
-//         <AnimatePresence>
-//           {isMenuOpen && (
-//             <motion.div
-//               initial={{ opacity: 0, height: 0 }}
-//               animate={{ opacity: 1, height: 'auto' }}
-//               exit={{ opacity: 0, height: 0 }}
-//               transition={{ duration: 0.3 }}
-//               className="md:hidden border-t border-gray-100 py-4"
-//             >
-//               {navigation.map((item) => (
-//                 <div key={item.name}>
-//                   <Link
-//                     to={item.href}
-//                     className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-blue-50 rounded-md transition-colors"
-//                     onClick={() => setIsMenuOpen(false)}
-//                   >
-//                     {item.name}
-//                   </Link>
-//                   {item.submenu && (
-//                     <div className="ml-4 space-y-1">
-//                       {item.submenu.map((subItem) => (
-//                         <Link
-//                           key={subItem.name}
-//                           to={subItem.href}
-//                           className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-900 hover:bg-blue-50 rounded-md transition-colors"
-//                           onClick={() => setIsMenuOpen(false)}
-//                         >
-//                           {subItem.name}
-//                         </Link>
-//                       ))}
-//                     </div>
-//                   )}
-//                 </div>
-//               ))}
-//               <Link
-//                 to="/contact"
-//                 className="mt-4 block bg-gradient-to-r from-blue-900 to-blue-800 text-white px-6 py-3 rounded-lg font-medium text-center hover:from-blue-800 hover:to-blue-700 transition-all duration-300"
-//                 onClick={() => setIsMenuOpen(false)}
-//               >
-//                 Get Free Quote
-//               </Link>
-//             </motion.div>
-//           )}
-//         </AnimatePresence>
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Sparkles } from "lucide-react";
+import { Menu, X, ChevronDown, Sparkles, Images } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { serviceRoutes } from "../pages/services/servicesRoutes";
+import logo from '../assets/NEXUS.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -212,24 +18,6 @@ const Header = () => {
       href: "/services",
       submenu: serviceRoutes,
     },
-    //   submenu: [
-    //     { name: 'Digital Marketing', href: '/services/digital-marketing' },
-    //     { name: 'Social Media Marketing', href: '/services/social-media' },
-    //     { name: 'Branding & Design', href: '/services/branding-design' },
-    //     { name: 'Packaging Design', href: '/services/packaging-design' },
-    //     { name: 'Brochure Designing', href: '/services/brochure-design' },
-    //     { name: 'Corporate Designing', href: '/services/corporate-design' },
-    //     { name: 'SEO & SEM', href: '/services/seo-sem' },
-    //     { name: 'Website Designing', href: '/services/website-designing' },
-    //     { name: 'Traditional Marketing', href: '/services/traditional-marketing' },
-    //     { name: 'Animation & 3D', href: '/services/animation-3d' },
-    //     { name: 'Public Relations', href: '/services/public-relations' },
-    //     { name: 'Advertising', href: '/services/advertising' },
-    //     { name: 'Outdoor Publicity', href: '/services/outdoor-publicity' },
-    //     { name: 'Video Production', href: '/services/video-production' },
-    //     { name: 'Printing', href: '/services/printing' },
-    //   ]
-    // },
     { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
 
@@ -267,31 +55,7 @@ const Header = () => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group z-10">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="glass-logo w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden"
-              >
-                <Sparkles size={24} className="text-white relative z-10" />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                />
-              </motion.div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-foreground">
-                  YNB Nexus
-                </span>
-                <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">
-                  Infinite Solutions
-                </span>
-              </div>
+                <img src={logo} alt="ynb logo" className="w-[30%] md:w-[20%] brightness-150 md:brightness-125" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -379,9 +143,9 @@ const Header = () => {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="ml-4"
+                className="ml-4 w-[160px]"
               >
-                <Link to="/contact" className="cta-button-h">
+                <Link to="/contact#form" className="cta-button-h ">
                   <span className="relative z-10">Get Free Quote</span>
                 </Link>
               </motion.div>
@@ -459,7 +223,7 @@ const Header = () => {
                         <motion.div
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          className="ml-4 space-y-1 max-h-60 overflow-y-auto custom-scrollbar bg-black/10 rounded-xl p-3"
+                          className="ml-4 space-y-1 max-h-60 overflow-y-auto custom-scrollbar bg-black/30 rounded-xl p-3"
                           style={{ width: "75%", margin: "0 auto" }}
                         >
                           <div className="grid grid-cols-1 gap-1">
@@ -493,7 +257,7 @@ const Header = () => {
                     className="pt-4 mt-4 border-t border-border/20 "
                   >
                     <Link
-                      to="/contact"
+                      to="/contact#form"
                       className="cta-button block text-center w-[50%] m-auto"
                     >
                       <span className="relative z-10">Get Free Quote</span>

@@ -37,30 +37,30 @@ const HeroSection = () => {
         {[...Array(25)].map((_, i) => {
           const left = Math.random() * 100; // random percentage from 0–100
           const top = Math.random() * 100;
-          
+
           // get random colors
           const hax = Math.floor(Math.random() * 16777215)
-          .toString(16)
-          .padStart(6, "0");
+            .toString(16)
+            .padStart(6, "0");
           const color = `#${hax}`;
           return (
             <motion.div
-            key={i}
-            className={`absolute w-2 h-2 opacity-25 rounded-full`}
-            style={{
-              left: `${left}%`,
-              top: `${top}%`,
-              backgroundColor: color,
-            }}
-            animate={{
-              rotate: [0, 360],
-              y: [-10, 10, -10],
-            }}
-            transition={{
-              duration: 8 + Math.random() * 4, // random duration
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+              key={i}
+              className={`absolute w-2 h-2 opacity-25 rounded-full`}
+              style={{
+                left: `${left}%`,
+                top: `${top}%`,
+                backgroundColor: color,
+              }}
+              animate={{
+                rotate: [0, 360],
+                y: [-10, 10, -10],
+              }}
+              transition={{
+                duration: 8 + Math.random() * 4, // random duration
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
           );
         })}
@@ -75,7 +75,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-6 py-3 mb-8 shadow-lg"
-            >
+          >
             <Sparkles size={20} className="text-infinity-cyan" />
             <span className="text-white font-medium shadow-sm">
               Your Infinite Marketing Partner
@@ -84,31 +84,74 @@ const HeroSection = () => {
 
           {/* Main Headline with Better Contrast */}
           {/* Main Heading */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6"
-            >
-              {/* <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-lg text-center"> */}
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="text-foreground">Transform Your</span>
-                <br />
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Digital Presence
-                </span>
-                <br />
-                <span className="text-foreground">Into Infinite Success</span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                We create data-driven marketing strategies that deliver measurable results, combining 
-                creativity with cutting-edge technology to fuel your business growth.
-              </p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-6"
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <span className="text-foreground">Transform Your</span>
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Digital Presence
+              </span>
+              <br />
+              <span className="text-foreground">Into Infinite Success</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              We create data-driven marketing strategies that deliver measurable
+              results, combining creativity with cutting-edge technology to fuel
+              your business growth.
+            </p>
+          </motion.div>
 
           {/* CTA Buttons */}
-          {/* <motion.div
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pb-20"
+          >
+            <Link to="/contact#form">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="cta-button flex items-center space-x-2 px-8 py-4"
+              >
+                <span>Get a Free Quote</span>
+                <ArrowRight size={18} />
+              </motion.button>
+            </Link>
+
+            <Link to="/services">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="nav-item flex items-center space-x-2 px-8 py-4 text-foreground"
+              >
+                <Zap size={18} />
+                <span>Explore Services</span>
+              </motion.button>
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom Gradient Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
+    </section>
+  );
+};
+
+export default HeroSection;
+
+{
+  /* CTA Buttons */
+}
+{
+  /* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -131,51 +174,14 @@ const HeroSection = () => {
               >
               <span>Explore Services</span>
             </Link>
-          </motion.div> */}
+          </motion.div> */
+}
 
-          {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pb-20"
-            >
-              <Link to='/contact#form'>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="cta-button flex items-center space-x-2 px-8 py-4"
-              >
-                <span>Get a Free Quote</span>
-                <ArrowRight size={18} />
-              </motion.button>
-              </Link>
-              
-              <Link to='/services'>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="nav-item flex items-center space-x-2 px-8 py-4 text-foreground"
-              >
-                <Zap size={18} />
-                <span>Explore Services</span>
-              </motion.button>
-            </Link>
-            </motion.div>
-
-        </div>
-      </div>
-
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
-    </section>
-  );
-};
-
-export default HeroSection;
-
-{/* Stats Section */}
-{/* <motion.div
+{
+  /* Stats Section */
+}
+{
+  /* <motion.div
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8, delay: 0.8 }}
@@ -197,10 +203,12 @@ export default HeroSection;
     </motion.div>
   ))}
   </div>
-  </motion.div> */}
+  </motion.div> */
+}
 
-  // old particle effect
-  {/* <div className="absolute inset-0 overflow-hidden z-10">
+// old particle effect
+{
+  /* <div className="absolute inset-0 overflow-hidden z-10">
     {[...Array(6)].map((_, i) => (
       <motion.div
         key={i}
@@ -220,4 +228,5 @@ export default HeroSection;
         }}
       />
     ))}
-  </div> */}
+  </div> */
+}

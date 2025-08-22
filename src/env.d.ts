@@ -1,6 +1,8 @@
-namespace NodeJS {
-  interface ProcessEnv {
-    NEXT_PUBLIC_API_URL: string;
-    SECRET_KEY: string;
-  }
-}
+// interface ImportMetaEnv {
+//   readonly ENDPOINT: string;
+//   // Add other env variables here
+// }
+
+// interface ImportMeta {
+//   readonly env: ImportMetaEnv;
+// }

@@ -19,6 +19,8 @@ import ImgContact from './Marketing.jpeg'
 import ImgService from './seo1.jpeg'
 import ImgFaq from './faq.webp'
 import ImgTestimonials from './testimonials.webp'
+import imgpnp from './pnp.webp'
+import tnc from './tnc.webp'
 
 export const background = {
     digitalMarketing: ImgDigitalMarketing,
@@ -41,5 +43,7 @@ export const background = {
     contact: ImgContact,
     service: ImgService,
     faq: ImgFaq,
-    bgTestimonials: ImgTestimonials
+    bgTestimonials: ImgTestimonials,
+    pnp: imgpnp,
+    tnc: tnc
 }

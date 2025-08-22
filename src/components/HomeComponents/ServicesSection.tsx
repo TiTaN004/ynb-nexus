@@ -170,17 +170,6 @@ const ServicesSection = () => {
                 <p className="text-muted-foreground leading-relaxed group-hover:text-background/80 transition-colors duration-300">
                   {service.description}
                 </p>
-
-                {/* Hover Arrow */}
-                <motion.div
-                  className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  initial={{ x: -10 }}
-                  animate={{ x: 0 }}
-                >
-                  {/* <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                    <ChevronRight size={16} className="text-primary" />
-                  </div> */}
-                </motion.div>
               </motion.div>
             ))}
           </motion.div>
@@ -224,16 +213,17 @@ const ServicesSection = () => {
           )}
         </div>
 
-        {/* Services Count */}
-        {/* <div className="text-center mt-8">
-          <p className="text-gray-500">
-            Showing {getCurrentServices().length} of {filteredServices.length} services
-            {activeCategory !== 'All' && ` in ${activeCategory}`}
-          </p>
-        </div> */}
       </div>
     </section>
   );
 };
 
 export default ServicesSection;
+
+{/* Services Count */}
+{/* <div className="text-center mt-8">
+  <p className="text-gray-500">
+    Showing {getCurrentServices().length} of {filteredServices.length} services
+    {activeCategory !== 'All' && ` in ${activeCategory}`}
+  </p>
+</div> */}

@@ -239,46 +239,10 @@ export default function ServiceTemplate({
         </div>
       </section>
 
-      {/* Results Section */}
-      {/* <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-4">Proven Results</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Our {title ? title.toLowerCase() : 'Service'} campaigns consistently deliver measurable growth for our clients.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-yellow-400 mb-2">250%</div>
-              <div className="text-blue-100">Average ROI Increase</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-yellow-400 mb-2">180%</div>
-              <div className="text-blue-100">Lead Generation Growth</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-yellow-400 mb-2">95%</div>
-              <div className="text-blue-100">Client Retention Rate</div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      
 
       <motion.section
         className="py-20 relative overflow-hidden"
-        // initial={{ opacity: 0 }}
-        // whileInView={{ opacity: 1 }}
-        // exit={{ opacity: 0 }}
-        // transition={{ duration: 1.2 }}
-        // viewport={{ once: false, margin: "-10%" }}
         style={{
           background:
             "linear-gradient(135deg, hsl(220, 45%, 12%) 0%, hsl(217, 60%, 8%) 25%, hsl(225, 70%, 15%) 50%, hsl(217, 60%, 8%) 75%, hsl(220, 45%, 12%) 100%)",
@@ -351,16 +315,6 @@ export default function ServiceTemplate({
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    // initial={{ opacity: 0, scale: 0.8, y: -20 }}
-                    // whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    // exit={{ opacity: 0, scale: 0.9, y: -10 }}
-                    // transition={{
-                    //   duration: 0.6,
-                    //   delay: 0.6 + index * 0.1,
-                    //   type: "spring",
-                    //   stiffness: 100
-                    // }}
-                    // viewport={{ once: false, margin: "-10%" }}
                     className="text-center group"
                   >
                     <div className="mb-4 relative">
@@ -444,3 +398,36 @@ export default function ServiceTemplate({
     </div>
   );
 }
+
+{/* Results Section */}
+      {/* <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4">Proven Results</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Our {title ? title.toLowerCase() : 'Service'} campaigns consistently deliver measurable growth for our clients.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-yellow-400 mb-2">250%</div>
+              <div className="text-blue-100">Average ROI Increase</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-yellow-400 mb-2">180%</div>
+              <div className="text-blue-100">Lead Generation Growth</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-yellow-400 mb-2">95%</div>
+              <div className="text-blue-100">Client Retention Rate</div>
+            </div>
+          </div>
+        </div>
+      </section> */}
